@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="java\Circle.cs" />
+    <Compile Remove="java\Line.cs" />
+    <Compile Remove="java\Point.cs" />
+    <Compile Remove="java\Shape.cs" />
+    <Compile Remove="java\Triangle.cs" />
+    <Compile Remove="java\TriangleH.cs" />
+    <Compile Remove="java\TriangleI.cs" />
+    <Compile Remove="java\TriangleM.cs" />
+    <Compile Remove="java\TriangleZ.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Models\TriangleZ.cs" />
+    <None Include="Models\TriangleM.cs" />
+    <None Include="Models\TriangleI.cs" />
+    <None Include="Models\TriangleH.cs" />
+    <None Include="Models\Triangle.cs" />
+    <None Include="Models\Line.cs" />
+    <None Include="Models\Point.cs" />
+    <None Include="Models\Circle.cs" />
+    <None Include="Models\Shape.cs" />
+  </ItemGroup>
+
+</Project>

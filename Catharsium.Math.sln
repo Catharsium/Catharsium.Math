@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math.Geometry", "Catharsium.Math.Geometry\Catharsium.Math.Geometry.csproj", "{06F0CF0C-421F-4C4A-BBBD-727866BE29C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math.Geometry.Tests", "Catharsium.Math.Geometry.Tests\Catharsium.Math.Geometry.Tests.csproj", "{32925B21-C92A-4E3F-BFC9-FEB19A46707A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math.Tests", "Catharsium.Math.Tests\Catharsium.Math.Tests.csproj", "{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math", "Catharsium.Math\Catharsium.Math.csproj", "{2B999E57-2A24-4957-A37A-7F19BF859353}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math", "Math", "{7F06D5E0-B1B1-4FA9-8276-8B39B47DF385}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math.Geometry", "Math.Geometry", "{B33072CF-D3DF-477F-A997-1F19077819BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06F0CF0C-421F-4C4A-BBBD-727866BE29C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F0CF0C-421F-4C4A-BBBD-727866BE29C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F0CF0C-421F-4C4A-BBBD-727866BE29C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F0CF0C-421F-4C4A-BBBD-727866BE29C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32925B21-C92A-4E3F-BFC9-FEB19A46707A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32925B21-C92A-4E3F-BFC9-FEB19A46707A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32925B21-C92A-4E3F-BFC9-FEB19A46707A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32925B21-C92A-4E3F-BFC9-FEB19A46707A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B999E57-2A24-4957-A37A-7F19BF859353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B999E57-2A24-4957-A37A-7F19BF859353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B999E57-2A24-4957-A37A-7F19BF859353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B999E57-2A24-4957-A37A-7F19BF859353}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06F0CF0C-421F-4C4A-BBBD-727866BE29C3} = {B33072CF-D3DF-477F-A997-1F19077819BC}
+		{32925B21-C92A-4E3F-BFC9-FEB19A46707A} = {B33072CF-D3DF-477F-A997-1F19077819BC}
+		{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D} = {7F06D5E0-B1B1-4FA9-8276-8B39B47DF385}
+		{2B999E57-2A24-4957-A37A-7F19BF859353} = {7F06D5E0-B1B1-4FA9-8276-8B39B47DF385}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCD6CAC3-7243-4B37-BB47-7C6FDE21F5F3}
+	EndGlobalSection
+EndGlobal
