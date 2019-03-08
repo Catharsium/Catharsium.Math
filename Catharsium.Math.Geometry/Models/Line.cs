@@ -53,7 +53,7 @@ public class Line : Shape
         {
             Id = "Q"
         };
-        this.Id = new string(id);
+        this.Id = id;
     }
 
 

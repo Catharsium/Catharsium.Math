@@ -2,16 +2,15 @@ using System;
 
 public class Circle : Shape
 {
-
     private Point p;
-    public Point P
+    public Point Center
     {
         get => this.p;
         set => this.p = new Point(value);
     }
 
 
-    private double R;
+    public double Radius { get; set; }
 
 
     public Circle() :
@@ -40,45 +39,32 @@ public class Circle : Shape
 
     public Circle(Point p, double r, string id)
     {
-        this.P = new Point(p);
-        this.R = r;
+        this.Center = new Point(p);
+        this.Radius = r;
         this.Id = "C";
     }
 
     
     public Circle(Circle c) :
-        this(c.P, c.R, c.Id)
+        this(c.Center, c.Radius, c.Id)
     {
     }
     
 
     public double GetPerimeter()
     {
-        return 2 * Math.PI * this.R;
+        return 2 * Math.PI * this.Radius;
     }
 
 
     public double GetArea()
     {
-        return Math.PI * Math.Pow(this.R, 2);
+        return Math.PI * Math.Pow(this.Radius, 2);
     }
 
 
     public override string ToString()
     {
-        return $"{this.Id}:[{this.P},{this.R}:{Math.Round(this.R)}]";
-    }
-
-
-    public static void Main(string[] args)
-    {
-        var c = new Circle(2, 3, 5);
-        var l = new Line(1, 2, 3, 4);
-        var d = new Circle(5, 2, 10);
-        var e = new Circle(0, 0, 8);
-        Console.WriteLine(c + "\n" + c.GetArea());
-        Console.WriteLine(d + "\n" + d.GetArea());
-        Console.WriteLine(l + "\n" + l.GetLength());
-        Console.WriteLine(e + "\n" + e.GetArea());
+        return $"{this.Id}:[{this.Center},{this.Radius}:{Math.Round(this.Radius)}]";
     }
 }
