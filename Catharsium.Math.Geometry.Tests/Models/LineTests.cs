@@ -13,8 +13,9 @@ namespace Catharsium.Math.Geometry.Tests.Models
         {
             var p = new Point(1, 2);
             var q = new Point(3, 4);
+            this.Target = new Line(p, q);
 
-            var actual = this.Target = new Line(p, q);
+            var actual = this.Target.GetLength();
             Assert.AreEqual(p.DistanceTo(q), actual);
         }
 
