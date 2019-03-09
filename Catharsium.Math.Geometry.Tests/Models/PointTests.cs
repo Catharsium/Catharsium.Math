@@ -9,7 +9,7 @@ namespace Catharsium.Math.Geometry.Tests.Models
         #region DistanceTo(Point)
 
         [TestMethod]
-        public void DistanceTo_HorizontalDifference_ReturnsDistance()
+        public void DistanceToPoint_HorizontalDifference_ReturnsDistance()
         {
             var distance = 2;
             var reference = new Point(0, 0);
@@ -21,7 +21,7 @@ namespace Catharsium.Math.Geometry.Tests.Models
 
 
         [TestMethod]
-        public void DistanceTo_VerticalDifference_ReturnsDistance()
+        public void DistanceToPoint_VerticalDifference_ReturnsDistance()
         {
             var distance = 2;
             var reference = new Point(0, 0);
@@ -33,7 +33,7 @@ namespace Catharsium.Math.Geometry.Tests.Models
 
 
         [TestMethod]
-        public void DistanceTo_DiagonalDistance_ReturnsPythagoras()
+        public void DistanceToPoint_DiagonalDistance_ReturnsPythagoras()
         {
             var distance = 2;
             var reference = new Point(0, 0);
@@ -45,7 +45,7 @@ namespace Catharsium.Math.Geometry.Tests.Models
 
 
         [TestMethod]
-        public void DistanceTo_AngledDistance_ReturnsPythagoras()
+        public void DistanceToPoint_AngledDistance_ReturnsPythagoras()
         {
             var distanceX = 2;
             var distanceY = 2;
@@ -58,7 +58,7 @@ namespace Catharsium.Math.Geometry.Tests.Models
 
 
         [TestMethod]
-        public void DistanceTo_Itself_Returns0()
+        public void DistanceToPoint_Itself_Returns0()
         {
             var reference = new Point(0, 0);
             this.Target = new Point(reference.X, reference.Y);
@@ -71,6 +71,15 @@ namespace Catharsium.Math.Geometry.Tests.Models
 
         #region DistanceTo(Line)
 
+        [TestMethod]
+        public void DistanceToLine_ReturnsDistanceToOnLine()
+        {
+            var reference = new Line(1, 2, 3, 4);
+            this.Target = new Point(5, 6);
+
+            var actual = this.Target.DistanceTo(reference);
+            Assert.AreEqual(reference.DistanceTo(this.Target), actual);
+        }
 
         #endregion
     }

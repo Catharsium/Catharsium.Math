@@ -2,6 +2,8 @@ using System;
 
 public class Line : Shape
 {
+    #region Properties
+
     private Point p;
     public Point P
     {
@@ -17,9 +19,11 @@ public class Line : Shape
         set => this.q = new Point(value);
     }
 
+    #endregion
 
-    public Line() :
-        this(0, 0, 0, 0)
+    #region Construction
+
+    public Line() : this(0, 0, 0, 0)
     {
         this.P.Id = "P";
         this.Q.Id = "Q";
@@ -40,7 +44,6 @@ public class Line : Shape
         this.P.Id = "P";
         this.Q.Id = "Q";
     }
-
 
 
     public Line(Point p, Point q, string id)
@@ -69,6 +72,7 @@ public class Line : Shape
         };
     }
 
+    #endregion
 
     public double GetLength()
     {
@@ -92,8 +96,8 @@ public class Line : Shape
     public Line ToVector()
     {
         var start = new Point(this.P);
-        var dir = new Point(this.Q.X - this.P.X, this.Q.Y - this.P.Y);
-        return new Line(start, dir);
+        var direction = new Point(this.Q.X - this.P.X, this.Q.Y - this.P.Y);
+        return new Line(start, direction);
     }
 
 
@@ -145,16 +149,8 @@ public class Line : Shape
     }
 
 
-    /** distanceTo berekent de afstand tussen een Line object en een Point
-     * @param p Het Point waarvan de afstand tot het aanroepende Line object
-     *            berekent moet worden
-     * @return De afstand tussen de Line en het Point
-     */
     public double DistanceTo(Point p)
     {
-        // Bereken de lijn die loodrecht staat op het Line object en laat deze
-        // door het Point p gaan. De afstand is de lengte van de Line tussen
-        // p en het snijpunt de Line en zijn loodrechte tegenhanger
         var v = this.ToVector();
         var r = new Point(-1 * v.Q.Y, v.Q.X);
         var x2 = r.X + p.X;
@@ -213,28 +209,5 @@ public class Line : Shape
     public override string ToString()
     {
         return $"{this.Id}:[{this.P},{this.Q}]";
-    }
-
-
-    public static void Main(string[] args)
-    {
-        var l = new Line(2, 3, 5, 7);
-        var m = new Line(0, 0, 4, 8);
-
-        Console.WriteLine(l + "\nLengte l: " + l.GetLength());
-        Console.WriteLine(m + "\nLengte m: " + m.GetLength());
-        Console.WriteLine("R midden op m: " + m.GetPoint(1, 1));
-        Console.WriteLine("Hoek l_m: " + l.AngleWith(m));
-        m = new Line(0, 0, 10, 10)
-        {
-            Id = "M"
-        };
-        l = new Line(0, 10, 9, 1)
-        {
-            Id = "L"
-        };
-        Console.WriteLine(l.CutsWith(m) + "\n");
-        m = new Line(0, 0, -5, 10);
-        Console.WriteLine(m.GetPoint(2, -1).ToStringDouble());
     }
 }

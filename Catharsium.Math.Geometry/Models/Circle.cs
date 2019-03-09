@@ -2,37 +2,38 @@ using System;
 
 public class Circle : Shape
 {
-    private Point p;
+    #region Properties
+
+    private Point center;
     public Point Center
     {
-        get => this.p;
-        set => this.p = new Point(value);
+        get => this.center;
+        set => this.center = new Point(value);
     }
 
 
     public double Radius { get; set; }
 
+    #endregion
 
-    public Circle() :
-        this(0, 0, 0)
+    #region Construction
+
+    public Circle() : this(0, 0, 0)
     {
     }
 
 
-    public Circle(double x, double y, double r) :
-        this(new Point(x, y), r, "C")
+    public Circle(double x, double y, double r) : this(new Point(x, y), r, "C")
     {
     }
 
 
-
-    public Circle(double x, double y, double r, string id) :
-        this(new Point(x, y), r, id)
+    public Circle(double x, double y, double r, string id) : this(new Point(x, y), r, id)
     {
     }
 
-    public Circle(Point p, double r) :
-        this(p, r, "C")
+
+    public Circle(Point p, double r) : this(p, r, "C")
     {
     }
 
@@ -44,12 +45,12 @@ public class Circle : Shape
         this.Id = "C";
     }
 
-    
-    public Circle(Circle c) :
-        this(c.Center, c.Radius, c.Id)
+
+    public Circle(Circle c) : this(c.Center, c.Radius, c.Id)
     {
     }
-    
+
+    #endregion
 
     public double GetPerimeter()
     {
