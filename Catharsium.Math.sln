@@ -17,7 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math.Geometry", "Math.Geome
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math.Geometry.Ui.Console", "Catharsium.Math.Geometry.Ui.Console\Catharsium.Math.Geometry.Ui.Console.csproj", "{061A838E-DEC0-44C9-8E45-99167B1E2163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catharsium.Math.Geometry.Ui.Console.Tests", "Catharsium.Math.Geometry.Ui.Console.Tests\Catharsium.Math.Geometry.Ui.Console.Tests.csproj", "{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math.Geometry.Ui.Console.Tests", "Catharsium.Math.Geometry.Ui.Console.Tests\Catharsium.Math.Geometry.Ui.Console.Tests.csproj", "{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math.Persistence", "Math.Persistence", "{5C3DD667-3FE2-475A-83C3-38E337275C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catharsium.Math.Persistence", "Catharsium.Math.MultiplicativePersistance\Catharsium.Math.Persistence.csproj", "{F13DC671-A20D-4950-85F6-57AB43D4F55F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catharsium.Math.Persistence.Tests", "Catharsium.Math.MultiplicativePersistance.Tests\Catharsium.Math.Persistence.Tests.csproj", "{D7AA3696-2728-48FC-9B4F-529C6F4D927A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +55,14 @@ Global
 		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13DC671-A20D-4950-85F6-57AB43D4F55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13DC671-A20D-4950-85F6-57AB43D4F55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13DC671-A20D-4950-85F6-57AB43D4F55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13DC671-A20D-4950-85F6-57AB43D4F55F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AA3696-2728-48FC-9B4F-529C6F4D927A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AA3696-2728-48FC-9B4F-529C6F4D927A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AA3696-2728-48FC-9B4F-529C6F4D927A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AA3696-2728-48FC-9B4F-529C6F4D927A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +74,8 @@ Global
 		{2B999E57-2A24-4957-A37A-7F19BF859353} = {7F06D5E0-B1B1-4FA9-8276-8B39B47DF385}
 		{061A838E-DEC0-44C9-8E45-99167B1E2163} = {B33072CF-D3DF-477F-A997-1F19077819BC}
 		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A} = {B33072CF-D3DF-477F-A997-1F19077819BC}
+		{F13DC671-A20D-4950-85F6-57AB43D4F55F} = {5C3DD667-3FE2-475A-83C3-38E337275C5E}
+		{D7AA3696-2728-48FC-9B4F-529C6F4D927A} = {5C3DD667-3FE2-475A-83C3-38E337275C5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCD6CAC3-7243-4B37-BB47-7C6FDE21F5F3}
