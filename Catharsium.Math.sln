@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math", "Math", "{7F06D5E0-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math.Geometry", "Math.Geometry", "{B33072CF-D3DF-477F-A997-1F19077819BC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.Math.Geometry.Ui.Console", "Catharsium.Math.Geometry.Ui.Console\Catharsium.Math.Geometry.Ui.Console.csproj", "{061A838E-DEC0-44C9-8E45-99167B1E2163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catharsium.Math.Geometry.Ui.Console.Tests", "Catharsium.Math.Geometry.Ui.Console.Tests\Catharsium.Math.Geometry.Ui.Console.Tests.csproj", "{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{2B999E57-2A24-4957-A37A-7F19BF859353}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B999E57-2A24-4957-A37A-7F19BF859353}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B999E57-2A24-4957-A37A-7F19BF859353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061A838E-DEC0-44C9-8E45-99167B1E2163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061A838E-DEC0-44C9-8E45-99167B1E2163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061A838E-DEC0-44C9-8E45-99167B1E2163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061A838E-DEC0-44C9-8E45-99167B1E2163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +58,8 @@ Global
 		{32925B21-C92A-4E3F-BFC9-FEB19A46707A} = {B33072CF-D3DF-477F-A997-1F19077819BC}
 		{DC2F175D-6FFD-49CF-AD98-2CAF69D0D55D} = {7F06D5E0-B1B1-4FA9-8276-8B39B47DF385}
 		{2B999E57-2A24-4957-A37A-7F19BF859353} = {7F06D5E0-B1B1-4FA9-8276-8B39B47DF385}
+		{061A838E-DEC0-44C9-8E45-99167B1E2163} = {B33072CF-D3DF-477F-A997-1F19077819BC}
+		{F0B98481-A3ED-4976-B7F9-5312E7F52A4A} = {B33072CF-D3DF-477F-A997-1F19077819BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCD6CAC3-7243-4B37-BB47-7C6FDE21F5F3}

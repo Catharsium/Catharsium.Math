@@ -1,13 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Version>0.3.0</Version>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.3.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FileStorage\FileInput.cs" />
     <Compile Remove="java\Circle.cs" />
+    <Compile Remove="java\DemoPanel.cs" />
     <Compile Remove="java\Line.cs" />
+    <Compile Remove="java\Opgave13.cs" />
     <Compile Remove="java\Point.cs" />
     <Compile Remove="java\Shape.cs" />
     <Compile Remove="java\Triangle.cs" />
@@ -15,9 +18,14 @@
     <Compile Remove="java\TriangleI.cs" />
     <Compile Remove="java\TriangleM.cs" />
     <Compile Remove="java\TriangleZ.cs" />
+    <Compile Remove="Models\FileOutput.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="FileStorage\FileInput.cs" />
+    <None Include="FileStorage\FileOutput.cs" />
+    <None Include="DemoPanel.cs" />
+    <None Include="ProgramTesmp.cs" />
     <None Include="Models\TriangleZ.cs" />
     <None Include="Models\TriangleM.cs" />
     <None Include="Models\TriangleI.cs" />
@@ -27,6 +35,10 @@
     <None Include="Models\Point.cs" />
     <None Include="Models\Circle.cs" />
     <None Include="Models\Shape.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Catharsium.Util.IO" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

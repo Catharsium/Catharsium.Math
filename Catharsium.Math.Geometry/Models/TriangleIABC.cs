@@ -109,9 +109,9 @@ public class TriangleIABC : TriangleI {
     private void SetE() {
         Point dir;
         var ti = new TriangleI((Triangle)this);
-        var la = new Line(ti.I.P, ti.A);
-        var lb = new Line(ti.I.P, ti.B);
-        var lc = new Line(ti.I.P, ti.C);
+        var la = new Line(ti.I.Center, ti.A);
+        var lb = new Line(ti.I.Center, ti.B);
+        var lc = new Line(ti.I.Center, ti.C);
         // Bereken de lijnen loodrecht op AA', BB' en CC'
         dir = la.ToVector().Q;
         la = new Line(ti.A, new Point(-dir.Y + ti.A.X, dir.X + ti.A.Y));
