@@ -1,4 +1,6 @@
-﻿using Catharsium.Util.Configuration;
+﻿using Catharsium.Math.Persistance;
+using Catharsium.Math.Persistance.Interfaces;
+using Catharsium.Util.Configuration;
 using Catharsium.Util.Configuration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +14,7 @@ namespace Catharsium.Math.Persistence.Configuration
             var configuration = config.Load<PersistenceMathConfiguration>();
 
             services.AddMathUtilities(config);
+            services.AddScoped<IMultiplicativePersistence, MultiplicativePersistence>();
 
             return services;
         }

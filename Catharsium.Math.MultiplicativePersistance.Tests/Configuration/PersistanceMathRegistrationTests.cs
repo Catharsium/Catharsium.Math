@@ -1,4 +1,6 @@
-﻿using Catharsium.Math.Persistence.Configuration;
+﻿using Catharsium.Math.Persistance;
+using Catharsium.Math.Persistance.Interfaces;
+using Catharsium.Math.Persistence.Configuration;
 using Catharsium.Util.Math.Interfaces;
 using Catharsium.Util.Math.Lists;
 using Catharsium.Util.Testing.Extensions;
@@ -19,6 +21,7 @@ namespace Catharsium.Math.Persistence.Tests.Configuration
             var config = Substitute.For<IConfiguration>();
 
             serviceCollection.AddPersistenceMath(config);
+            serviceCollection.ReceivedRegistration<IMultiplicativePersistence, MultiplicativePersistence>();
         }
 
 
