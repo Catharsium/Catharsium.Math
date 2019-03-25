@@ -80,6 +80,8 @@ namespace Catharsium.Math.Geometry.Models
         }
 
         #endregion
+        
+        #region Mathematical Properties
 
         public double GetLength()
         {
@@ -200,6 +202,7 @@ namespace Catharsium.Math.Geometry.Models
             return new Point(x, y);
         }
 
+        #endregion
 
         public override string ToString()
         {
