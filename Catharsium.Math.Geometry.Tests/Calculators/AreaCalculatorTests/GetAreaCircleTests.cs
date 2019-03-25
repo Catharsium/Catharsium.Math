@@ -11,7 +11,10 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_NoRadius_Returns0()
         {
-            var circle = new Circle(0, 0, 0);
+            var circle = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = 0
+            };
             var actual = this.Target.GetArea(circle);
             Assert.AreEqual(0, actual);
         }
@@ -20,8 +23,14 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_LocationIsIrrelevant()
         {
-            var reference = new Circle(0, 0, 2);
-            var circle = new Circle(1, 2, reference.Radius);
+            var reference = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = 2
+            };
+            var circle = new Circle(null, null) {
+                Center = new Point(1, 2),
+                Radius = reference.Radius
+            };
 
             var expected = this.Target.GetArea(reference);
             var actual = this.Target.GetArea(circle);
@@ -32,16 +41,22 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_Radius1_ReturnsPi()
         {
-            var circle = new Circle(0, 0, 1);
+            var circle = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = 1
+            };
             var actual = this.Target.GetArea(circle);
             Assert.AreEqual(System.Math.PI, actual);
         }
-        
+
 
         [TestMethod]
         public void GetArea_RadiusX_ReturnsRadiusSquaredTimesPi()
         {
-            var circle = new Circle(0, 0, 10);
+            var circle = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = 10
+            };
             var actual = this.Target.GetArea(circle);
             Assert.AreEqual(System.Math.PI * circle.Radius * circle.Radius, actual);
         }

@@ -1,3 +1,4 @@
+using System;
 using Catharsium.Math.Geometry.Interfaces;
 
 namespace Catharsium.Math.Geometry.Models
@@ -5,11 +6,13 @@ namespace Catharsium.Math.Geometry.Models
     public class Circle : Shape
     {
         private readonly IAreaCalculator areaCalculator;
+        private readonly ICircumferenceCalculator circumferenceCalculator;
 
 
-        public Circle(IAreaCalculator areaCalculator)
+        public Circle(IAreaCalculator areaCalculator, ICircumferenceCalculator circumferenceCalculator)
         {
             this.areaCalculator = areaCalculator;
+            this.circumferenceCalculator = circumferenceCalculator;
         }
 
 
@@ -27,37 +30,20 @@ namespace Catharsium.Math.Geometry.Models
 
         #endregion
 
-        #region Construction
+        #region Mathematical Properties
 
-        public Circle() : this(0, 0, 0) { }
-
-
-        public Circle(double x, double y, double r) : this(new Point(x, y), r, "C") { }
-
-
-        public Circle(double x, double y, double r, string id) : this(new Point(x, y), r, id) { }
-
-
-        public Circle(Point p, double r) : this(p, r, "C") { }
-
-
-        public Circle(Point p, double r, string id)
+        public double GetCircumference()
         {
-            this.Center = new Point(p);
-            this.Radius = r;
-            this.Id = "C";
+            return this.circumferenceCalculator.GetCircumference(this);
         }
 
-
-        public Circle(Circle c) : this(c.Center, c.Radius, c.Id) { }
-
-        #endregion
 
         public double GetArea()
         {
-            return System.Math.PI * System.Math.Pow(this.Radius, 2);
+            return this.areaCalculator.GetArea(this);
         }
 
+        #endregion
 
         public override string ToString()
         {

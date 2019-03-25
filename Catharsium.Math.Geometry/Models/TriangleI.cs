@@ -30,6 +30,8 @@ namespace Catharsium.Math.Geometry.Models
     public class TriangleI : Triangle
     {
         public Circle I;
+        protected readonly IAreaCalculator areaCalculator;
+        protected readonly ICircumferenceCalculator circumferenceCalculator;
         protected readonly IDistanceCalculator distanceCalculator;
 
 
@@ -117,7 +119,9 @@ namespace Catharsium.Math.Geometry.Models
             var Bc = this.GetLineB().GetPoint(this.distanceCalculator.GetLength(this.GetLineC()), this.distanceCalculator.GetLength(this.GetLineA()));
             var ta = new Line(this.A, Ac);
             var tb = new Line(this.B, Bc);
-            this.I = new Circle(ta.CutsWith(tb), this.distanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA())) {
+            this.I = new Circle(this.areaCalculator, this.circumferenceCalculator) {
+                Center = ta.CutsWith(tb),
+                Radius = this.distanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA()),
                 Id = "I"
             };
         }

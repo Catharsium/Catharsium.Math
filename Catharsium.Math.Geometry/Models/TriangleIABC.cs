@@ -135,16 +135,19 @@ namespace Catharsium.Math.Geometry.Models
 
             this.I = ti.I;
             this.I.Id = "I";
-            this.K = new Circle(lb.CutsWith(lc),
-                ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineA()))) {
+            this.K = new Circle(this.areaCalculator, this.circumferenceCalculator) {
+                Center = lb.CutsWith(lc),
+                Radius = ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineA())),
                 Id = "IA"
             };
-            this.L = new Circle(la.CutsWith(lc),
-                ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineB()))) {
+            this.L = new Circle(this.areaCalculator, this.circumferenceCalculator) {
+                Center = la.CutsWith(lc),
+                Radius = ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineB())),
                 Id = "IB"
             };
-            this.M = new Circle(la.CutsWith(lb),
-                ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineC()))) {
+            this.M = new Circle(this.areaCalculator, this.circumferenceCalculator) {
+                Center = la.CutsWith(lb),
+                Radius = ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineC())),
                 Id = "IC"
             };
         }

@@ -19,7 +19,10 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_SingleRadius_Returns2Pi()
         {
-            var circle = new Circle(0, 0, 1);
+            var circle = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = 1
+            };
             var actual = this.Target.GetCircumference(circle);
             Assert.AreEqual(System.Math.PI * 2, actual);
         }
@@ -28,7 +31,10 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_AnyRadius_Returns2PiTimesRadius()
         {
-            var circle = new Circle(0, 0, this.Radius);
+            var circle = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = this.Radius
+            };
             var actual = this.Target.GetCircumference(circle);
             Assert.AreEqual(System.Math.PI * 2 * circle.Radius, actual);
         }
@@ -37,10 +43,16 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_LocationDoesNotInfluencePerimeter()
         {
-            var referenceCircle = new Circle(2, 2, this.Radius);
-            var circle = new Circle(referenceCircle.Center, referenceCircle.Radius);
+            var reference = new Circle(null, null) {
+                Center = new Point(0, 0),
+                Radius = this.Radius
+            };
+            var circle = new Circle(null, null) {
+                Center = new Point(reference.Center.X + 2, reference.Center.Y + 2),
+                Radius = reference.Radius
+            };
 
-            var expected = this.Target.GetCircumference(referenceCircle);
+            var expected = this.Target.GetCircumference(reference);
             var actual = this.Target.GetCircumference(circle);
             Assert.AreEqual(expected, actual);
         }
