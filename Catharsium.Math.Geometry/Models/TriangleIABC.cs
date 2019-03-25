@@ -1,4 +1,6 @@
 using System;
+using Catharsium.Math.Geometry.Interfaces;
+using Catharsium.Math.Geometry.Models;
 
 /**
  * NAAM   : T.W. Brachthuizer<BR>
@@ -32,6 +34,7 @@ public class TriangleIABC : TriangleI {
     protected Circle K { get; set; }
     protected Circle L { get; set; }
     protected Circle M { get; set; }
+    private readonly ICircumferenceCalculator circumferenceCalculator;
 
 
     public TriangleIABC() : base()
@@ -122,15 +125,15 @@ public class TriangleIABC : TriangleI {
 
         this.I = ti.I;
         this.I.Id = "I";
-        this.K = new Circle(lb.CutsWith(lc), ti.GetArea() / ((ti.GetPerimeter() / 2) - ti.GetLengthA()))
+        this.K = new Circle(lb.CutsWith(lc), ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineA())))
         {
             Id = "IA"
         };
-        this.L = new Circle(la.CutsWith(lc), ti.GetArea() / ((ti.GetPerimeter() / 2) - ti.GetLengthB()))
+        this.L = new Circle(la.CutsWith(lc), ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineB())))
         {
             Id = "IB"
         };
-        this.M = new Circle(la.CutsWith(lb), ti.GetArea() / ((ti.GetPerimeter() / 2) - ti.GetLengthC()))
+        this.M = new Circle(la.CutsWith(lb), ti.GetArea() / ((this.circumferenceCalculator.GetCircumference(ti) / 2) - this.distanceCalculator.GetLength(ti.GetLineC())))
         {
             Id = "IC"
         };

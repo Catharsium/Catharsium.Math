@@ -32,20 +32,6 @@ public class Point : Shape
     }
 
 
-    public double DistanceTo(Point p)
-    {
-        var dx = Math.Pow(p.X - this.X, 2);
-        var dy = Math.Pow(p.Y - this.Y, 2);
-        return Math.Sqrt(dx + dy);
-    }
-
-
-    public double DistanceTo(Line l)
-    {
-        return l.DistanceTo(this);
-    }
-
-
     public override string ToString()
     {
         return this.Id + ":[" + Math.Round(this.X) + "," + Math.Round(this.Y) + "]";

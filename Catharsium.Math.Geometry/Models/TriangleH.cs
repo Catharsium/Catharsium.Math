@@ -1,4 +1,5 @@
 using System;
+using Catharsium.Math.Geometry.Models;
 
 /**
  * NAAM   : T.W. Brachthuizer<BR>

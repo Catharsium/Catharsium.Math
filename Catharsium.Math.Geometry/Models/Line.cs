@@ -1,7 +1,17 @@
 using System;
+using Catharsium.Math.Geometry.Interfaces;
 
 public class Line : Shape
 {
+    private readonly IDistanceCalculator distanceCalculator;
+
+
+    public Line(IDistanceCalculator distanceCalculator)
+    {
+        this.distanceCalculator = distanceCalculator;
+    }
+
+
     #region Properties
 
     private Point p;
@@ -76,7 +86,7 @@ public class Line : Shape
 
     public double GetLength()
     {
-        return this.P.DistanceTo(this.Q);
+        return this.distanceCalculator.GetDistance(this.P, this.Q);
     }
 
 
@@ -124,7 +134,7 @@ public class Line : Shape
      */
     public void Normalize(int w, int h)
     {
-        var dpq = this.P.DistanceTo(this.Q);
+        var dpq = this.distanceCalculator.GetDistance(this.P, this.Q);
 
         if ((this.Q.X < 0) || (this.Q.X > w) || (this.Q.Y < 0) || (this.Q.Y > h))
         {
@@ -139,25 +149,13 @@ public class Line : Shape
             {
                 x += dx;
                 y += dy;
-                if (new Point(x, y).DistanceTo(this.Q) > dpq)
+                if (this.distanceCalculator.GetDistance(new Point(x, y), this.Q) > dpq)
                 {
                     dx *= -1; dy *= -1;
                 }
             }
             this.Q = new Point(x, y);
         }
-    }
-
-
-    public double DistanceTo(Point p)
-    {
-        var v = this.ToVector();
-        var r = new Point(-1 * v.Q.Y, v.Q.X);
-        var x2 = r.X + p.X;
-        var y2 = r.Y + p.Y;
-        v = new Line(p, new Point(x2, y2));
-        r = this.CutsWith(v);
-        return r.DistanceTo(v.P);
     }
 
 

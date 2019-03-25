@@ -3,7 +3,7 @@
 
 namespace Catharsium.Math.Geometry.Ui.Console
 {
-    public static class Program
+    public static class Program2
     {
         //        private const int GL_ARRAY_BUFFER = 0x8892;
         //        private const int GL_STATIC_DRAW = 0x88E4;
@@ -28,7 +28,7 @@ namespace Catharsium.Math.Geometry.Ui.Console
         //            0.0f,  0.5f,
         //        };
 
-        public static void Main(string[] args)
+        public static void Main2(string[] args)
         {
             //            Initialise();
             //            var window = CreateWindow(1024, 768, ".NET Core Graphics Example", IntPtr.Zero, IntPtr.Zero);

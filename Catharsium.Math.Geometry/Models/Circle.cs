@@ -52,12 +52,6 @@ public class Circle : Shape
 
     #endregion
 
-    public double GetPerimeter()
-    {
-        return 2 * Math.PI * this.Radius;
-    }
-
-
     public double GetArea()
     {
         return Math.PI * Math.Pow(this.Radius, 2);

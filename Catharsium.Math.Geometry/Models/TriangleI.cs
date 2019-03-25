@@ -1,4 +1,6 @@
 using System;
+using Catharsium.Math.Geometry.Interfaces;
+using Catharsium.Math.Geometry.Models;
 
 /**
  * NAAM   : T.W. Brachthuizer<BR>
@@ -27,6 +29,7 @@ using System;
 public class TriangleI : Triangle
 {
     public Circle I;
+    protected readonly IDistanceCalculator distanceCalculator;
 
 
     public TriangleI() : base()
@@ -109,11 +112,11 @@ public class TriangleI : Triangle
      */
     private void SetE()
     {
-        var Ac = this.GetLineA().GetPoint(this.GetLengthC(), this.GetLengthB());
-        var Bc = this.GetLineB().GetPoint(this.GetLengthC(), this.GetLengthA());
+        var Ac = this.GetLineA().GetPoint(this.distanceCalculator.GetLength(this.GetLineC()), this.distanceCalculator.GetLength(this.GetLineB()));
+        var Bc = this.GetLineB().GetPoint(this.distanceCalculator.GetLength(this.GetLineC()), this.distanceCalculator.GetLength(this.GetLineA()));
         var ta = new Line(this.A, Ac);
         var tb = new Line(this.B, Bc);
-        this.I = new Circle(ta.CutsWith(tb), ta.CutsWith(tb).DistanceTo(this.GetLineA()))
+        this.I = new Circle(ta.CutsWith(tb), this.distanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA()))
         {
             Id = "I"
         };

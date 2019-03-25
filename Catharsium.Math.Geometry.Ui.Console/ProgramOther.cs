@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace GraphicsExample
 {
-    public class Program
+    public class Program1
     {
         private const int GL_ARRAY_BUFFER = 0x8892;
         private const int GL_STATIC_DRAW = 0x88E4;

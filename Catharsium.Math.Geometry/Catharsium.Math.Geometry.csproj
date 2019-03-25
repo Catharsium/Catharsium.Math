@@ -24,8 +24,6 @@
   <ItemGroup>
     <None Include="FileStorage\FileInput.cs" />
     <None Include="FileStorage\FileOutput.cs" />
-    <None Include="DemoPanel.cs" />
-    <None Include="ProgramTesmp.cs" />
     <None Include="Models\TriangleZ.cs" />
     <None Include="Models\TriangleM.cs" />
     <None Include="Models\TriangleI.cs" />
@@ -38,7 +36,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Catharsium.Util.IO" Version="1.1.0" />
+    <PackageReference Include="Catharsium.Util.IO" Version="1.1.4" />
+    <PackageReference Include="Catharsium.Util.Math" Version="1.1.4" />
   </ItemGroup>
 
 </Project>
