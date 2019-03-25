@@ -1,7 +1,18 @@
+using Catharsium.Math.Geometry.Interfaces;
+
 namespace Catharsium.Math.Geometry.Models
 {
     public class Circle : Shape
     {
+        private readonly IAreaCalculator areaCalculator;
+
+
+        public Circle(IAreaCalculator areaCalculator)
+        {
+            this.areaCalculator = areaCalculator;
+        }
+
+
         #region Properties
 
         private Point center;
