@@ -5,7 +5,7 @@ using Catharsium.Util.Configuration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Catharsium.Math.Persistence.Configuration
+namespace Catharsium.Math.Geometry.Configuration
 {
     public static class GeometryMathRegistration
     {

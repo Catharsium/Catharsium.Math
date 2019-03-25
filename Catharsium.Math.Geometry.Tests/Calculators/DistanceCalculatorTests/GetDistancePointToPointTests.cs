@@ -1,11 +1,12 @@
 ﻿using Catharsium.Math.Geometry.Calculators;
+using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catharsium.Math.Geometry.Tests.Calculators.LengthCalculatorTests
+namespace Catharsium.Math.Geometry.Tests.Calculators.DistanceCalculatorTests
 {
     [TestClass]
-    public class PointToPointGetDistanceTests : TestFixture<DistanceCalculator>
+    public class GetDistancePointToPointTests : TestFixture<DistanceCalculator>
     {
         [TestMethod]
         public void GetDistance_HorizontalDifference_ReturnsDistance()

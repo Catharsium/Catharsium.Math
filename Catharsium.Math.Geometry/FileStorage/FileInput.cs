@@ -1,28 +1,31 @@
 using System.IO;
+using Catharsium.Util.IO.Interfaces;
 
-public class FileInput
+namespace Catharsium.Math.Geometry.FileStorage
 {
-    private readonly IFile file;
-    private readonly StreamReader reader;
-
-
-    public FileInput(IFileFactory fileFactory, string fileName) : this(fileFactory.CreateFile(fileName))
+    public class FileInput
     {
-        if (!this.file.Exists)
+        private readonly IFile file;
+        private readonly StreamReader reader;
+
+
+        public FileInput(IFileFactory fileFactory, string fileName) : this(fileFactory.CreateFile(fileName))
         {
-            this.writer = this.file.OpenText();
+            if (!this.file.Exists) {
+                this.reader = this.file.OpenText();
+            }
         }
-    }
 
 
-    public FileInput(IFile file)
-    {
-        this.file = file;
-    }
+        public FileInput(IFile file)
+        {
+            this.file = file;
+        }
 
 
-    public string Write()
-    {
-        return this.reader.ReadLine();
+        public string Write()
+        {
+            return this.reader.ReadLine();
+        }
     }
 }

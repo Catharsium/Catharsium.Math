@@ -1,6 +1,6 @@
 ﻿using Catharsium.Math.Geometry.Calculators;
+using Catharsium.Math.Geometry.Configuration;
 using Catharsium.Math.Geometry.Interfaces;
-using Catharsium.Math.Persistence.Configuration;
 using Catharsium.Util.Math.Interfaces;
 using Catharsium.Util.Math.Lists;
 using Catharsium.Util.Testing.Extensions;

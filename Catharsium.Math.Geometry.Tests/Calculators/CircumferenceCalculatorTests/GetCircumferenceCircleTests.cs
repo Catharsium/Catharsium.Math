@@ -1,11 +1,12 @@
 ﻿using Catharsium.Math.Geometry.Calculators;
+using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTests
 {
     [TestClass]
-    public class CircleGetCircumferenceTests : TestFixture<CircumferenceCalculator>
+    public class GetCircumferenceCircleTests : TestFixture<CircumferenceCalculator>
     {
         #region Fixture
 

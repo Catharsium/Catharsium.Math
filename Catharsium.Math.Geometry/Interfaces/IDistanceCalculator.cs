@@ -1,4 +1,6 @@
-﻿namespace Catharsium.Math.Geometry.Interfaces
+﻿using Catharsium.Math.Geometry.Models;
+
+namespace Catharsium.Math.Geometry.Interfaces
 {
     public interface IDistanceCalculator
     {

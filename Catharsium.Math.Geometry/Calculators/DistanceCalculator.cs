@@ -1,4 +1,5 @@
 ﻿using Catharsium.Math.Geometry.Interfaces;
+using Catharsium.Math.Geometry.Models;
 
 namespace Catharsium.Math.Geometry.Calculators
 {

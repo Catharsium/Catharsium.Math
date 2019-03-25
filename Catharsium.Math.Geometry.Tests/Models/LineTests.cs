@@ -1,4 +1,5 @@
 ﻿using Catharsium.Math.Geometry.Interfaces;
+using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;

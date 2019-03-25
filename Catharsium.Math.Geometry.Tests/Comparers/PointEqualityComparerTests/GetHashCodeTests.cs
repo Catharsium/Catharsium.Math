@@ -1,8 +1,9 @@
 ﻿using Catharsium.Math.Geometry.Comparers;
+using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catharsium.Math.Geometry.Tests.Comparers
+namespace Catharsium.Math.Geometry.Tests.Comparers.PointEqualityComparerTests
 {
     [TestClass]
     public class GetHashCodeTests : TestFixture<PointEqualityComparer>

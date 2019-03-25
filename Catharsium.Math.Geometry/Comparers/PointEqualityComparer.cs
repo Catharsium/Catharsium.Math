@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Catharsium.Math.Geometry.Models;
 
 namespace Catharsium.Math.Geometry.Comparers
 {

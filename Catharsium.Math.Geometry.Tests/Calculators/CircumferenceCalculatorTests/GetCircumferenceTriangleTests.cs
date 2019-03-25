@@ -8,7 +8,7 @@ using NSubstitute;
 namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTests
 {
     [TestClass]
-    public class TriangleGetCircumferenceTests : TestFixture<CircumferenceCalculator>
+    public class GetCircumferenceTriangleTests : TestFixture<CircumferenceCalculator>
     {
         [TestMethod]
         public void GetCircumference_ValidTriangle_ReturnsSumOfSidesLength()
