@@ -21,7 +21,9 @@ namespace Catharsium.Math.Geometry.Tests.Configuration
             var config = Substitute.For<IConfiguration>();
 
             serviceCollection.AddGeometryMath(config);
+            serviceCollection.ReceivedRegistration<IAreaCalculator, AreaCalculator>(); 
             serviceCollection.ReceivedRegistration<ICircumferenceCalculator, CircumferenceCalculator>();
+            serviceCollection.ReceivedRegistration<IDistanceCalculator, DistanceCalculator>();
         }
 
 

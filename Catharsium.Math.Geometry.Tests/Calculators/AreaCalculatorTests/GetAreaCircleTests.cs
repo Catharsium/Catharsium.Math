@@ -7,5 +7,10 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
     [TestClass]
     public class GetAreaCircleTests : TestFixture<AreaCalculator>
     {
+        [TestMethod]
+        public void GetArea_()
+        {
+
+        }
     }
 }
