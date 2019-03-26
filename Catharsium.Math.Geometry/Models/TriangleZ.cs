@@ -1,4 +1,5 @@
 using System;
+using Catharsium.Math.Geometry.Interfaces;
 
 /**
  * NAAM   : T.W. Brachthuizer<BR>
@@ -27,83 +28,35 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleZ : Triangle
     {
-
         protected Point Z { get; set; }
 
 
-        public TriangleZ() : base()
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point A {
+            set {
+                base.A = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleZ(Point A, Point B, Point C) :
-            base(A, B, C, "T")
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point B {
+            set {
+                base.B = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleZ(Point A, Point B, Point C, string id) : base(A, B, C, id)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point C {
+            set {
+                base.C = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleZ(Triangle t) : base(t)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
-        }
-
-
-        public TriangleZ(TriangleZ t) : this(t.A, t.B, t.C, t.Id)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
-        }
-
-
-        /** Setter van Point A
-     * @param A - De nieuwe waarde (locatie) voor het eerste hoekpunt
-     */
-        public void SetA(Point a)
-        {
-            this.A = new Point(a);
-            this.SetE();
-        }
-
-        /** Setter van Point B
-     * @param B - De nieuwe waarde (locatie) voor het tweede hoekpunt
-     */
-        public void SetB(Point b)
-        {
-            this.B = new Point(b);
-            this.SetE();
-        }
-
-        /** Setter van Point C
-     * @param C - De nieuwe waarde (locatie) voor het derde hoekpunt
-     */
-        public void SetC(Point c)
-        {
-            this.C = new Point(c);
-            this.SetE();
-        }
-
+        public TriangleZ(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
+            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
 
         /*  setE (E = Extra Point) berekent het Z-Point van de Triangle en slaat de
      *  waarde op in het object; PRIVATE methode en geen Setter (ondanks de
@@ -114,8 +67,14 @@ namespace Catharsium.Math.Geometry.Models
         {
             var ra = new Point(this.GetLineA().GetPoint(1, 1));
             var rb = new Point(this.GetLineB().GetPoint(1, 1));
-            var ta = new Line(this.A, ra);
-            var tb = new Line(this.B, rb);
+            var ta = new Line(this.DistanceCalculator) {
+                P = this.A,
+                Q = ra
+            };
+            var tb = new Line(this.DistanceCalculator) {
+                P = this.B,
+                Q = rb
+            };
             this.Z = new Point(ta.CutsWith(tb)) {
                 Id = "Z"
             };
@@ -124,18 +83,18 @@ namespace Catharsium.Math.Geometry.Models
 
         public override string ToString()
         {
-            return $"{new Triangle(this)} => {this.Z}";
+            return $"{base.ToString()} => {this.Z}";
         }
 
 
-        public new static void Main(string[] args)
-        {
-            var tz = new TriangleZ(new Triangle(106, 408, 610, 408, 531, 120));
-            Console.WriteLine(tz);
-            tz = new TriangleZ(new Triangle(245, 366, 609, 366, 244, 119));
-            Console.WriteLine(tz);
-            tz = new TriangleZ(new Triangle(120, 199, 484, 339, 687, 148));
-            Console.WriteLine(tz);
-        }
+        //public new static void Main(string[] args)
+        //{
+        //    var tz = new TriangleZ(new Triangle(106, 408, 610, 408, 531, 120));
+        //    Console.WriteLine(tz);
+        //    tz = new TriangleZ(new Triangle(245, 366, 609, 366, 244, 119));
+        //    Console.WriteLine(tz);
+        //    tz = new TriangleZ(new Triangle(120, 199, 484, 339, 687, 148));
+        //    Console.WriteLine(tz);
+        //}
     }
 }

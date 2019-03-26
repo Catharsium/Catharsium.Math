@@ -31,55 +31,6 @@ namespace Catharsium.Math.Geometry.Models
         }
 
         #endregion
-
-        #region Construction
-
-        public Line() : this(0, 0, 0, 0)
-        {
-            this.P.Id = "P";
-            this.Q.Id = "Q";
-        }
-
-
-        public Line(double x1, double y1, double x2, double y2) :
-            this(new Point(x1, y1), new Point(x2, y2), "L")
-        {
-            this.P.Id = "P";
-            this.Q.Id = "Q";
-        }
-
-
-        public Line(Point p, Point q) :
-            this(new Point(p), new Point(q), "L")
-        {
-            this.P.Id = "P";
-            this.Q.Id = "Q";
-        }
-
-
-        public Line(Point p, Point q, string id)
-        {
-            this.P = new Point(p) {
-                Id = "P"
-            };
-            this.Q = new Point(q) {
-                Id = "Q"
-            };
-            this.Id = id;
-        }
-
-
-        public Line(Line l)
-        {
-            this.P = new Point(l.P) {
-                Id = "P"
-            };
-            this.Q = new Point(l.Q) {
-                Id = "Q"
-            };
-        }
-
-        #endregion
         
         #region Mathematical Properties
 
@@ -106,7 +57,10 @@ namespace Catharsium.Math.Geometry.Models
         {
             var start = new Point(this.P);
             var direction = new Point(this.Q.X - this.P.X, this.Q.Y - this.P.Y);
-            return new Line(start, direction);
+            return new Line(this.distanceCalculator) {
+                P = start,
+                Q = direction
+            };
         }
 
 

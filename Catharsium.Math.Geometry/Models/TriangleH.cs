@@ -1,4 +1,4 @@
-using System;
+using Catharsium.Math.Geometry.Interfaces;
 
 /**
  * NAAM   : T.W. Brachthuizer<BR>
@@ -29,71 +29,32 @@ namespace Catharsium.Math.Geometry.Models
         protected Point H;
 
 
-        public TriangleH() : base()
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point A {
+            set {
+                base.A = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleH(Point a, Point b, Point c) : base(a, b, c, "T")
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point B {
+            set {
+                base.B = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleH(Point a, Point b, Point c, string id) : base(a, b, c, id)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point C {
+            set {
+                base.C = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleH(Triangle t) : base(t)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
-        }
-
-
-        public TriangleH(TriangleH t) : this(t.A, t.B, t.C, t.Id)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
-        }
-
-
-        public void SetA(Point a)
-        {
-            this.A = new Point(a);
-            this.SetE();
-        }
-
-
-        public void SetB(Point b)
-        {
-            this.B = new Point(b);
-            this.SetE();
-        }
-
-
-        public void SetC(Point c)
-        {
-            this.C = new Point(c);
-            this.SetE();
-        }
-
+        public TriangleH(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
+            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
 
 
         /*  setE (E = Extra Point) berekent het H-Point van de Triangle en slaat de
@@ -107,8 +68,14 @@ namespace Catharsium.Math.Geometry.Models
             var rb = -1 / this.GetLineB().ToEq().X;
             var ya = this.A.Y - (this.A.X * ra);
             var yb = this.B.Y - (this.B.X * rb);
-            var ta = new Line(this.A, new Point(0, ya));
-            var tb = new Line(this.B, new Point(0, yb));
+            var ta = new Line(this.DistanceCalculator) {
+                P = this.A,
+                Q = new Point(0, ya)
+            };
+            var tb = new Line(this.DistanceCalculator) {
+                P = this.B,
+                Q = new Point(0, yb)
+            };
             this.H = new Point(ta.CutsWith(tb)) {
                 Id = "H"
             };
@@ -117,18 +84,18 @@ namespace Catharsium.Math.Geometry.Models
 
         public override string ToString()
         {
-            return $"{new Triangle(this)} => {this.H}";
+            return $"{base.ToString()} => {this.H}";
         }
 
 
-        public new static void Main(string[] args)
-        {
-            var th = new TriangleH(new Triangle(178, 377, 649, 377, 557, 101));
-            Console.WriteLine(th);
-            th = new TriangleH(new Triangle(244, 378, 605, 378, 244, 115));
-            Console.WriteLine(th);
-            th = new TriangleH(new Triangle(123, 244, 405, 298, 518, 172));
-            Console.WriteLine(th);
-        }
+        //public new static void Main(string[] args)
+        //{
+        //    var th = new TriangleH(new Triangle(178, 377, 649, 377, 557, 101));
+        //    Console.WriteLine(th);
+        //    th = new TriangleH(new Triangle(244, 378, 605, 378, 244, 115));
+        //    Console.WriteLine(th);
+        //    th = new TriangleH(new Triangle(123, 244, 405, 298, 518, 172));
+        //    Console.WriteLine(th);
+        //}
     }
 }

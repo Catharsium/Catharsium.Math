@@ -8,9 +8,6 @@ namespace Catharsium.Math.Geometry.Models
         public double Y { get; set; }
 
 
-        public Point() : this(0, 0) { }
-
-
         public Point(double x, double y)
         {
             this.X = x;

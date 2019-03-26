@@ -30,82 +30,34 @@ namespace Catharsium.Math.Geometry.Models
     public class TriangleI : Triangle
     {
         public Circle I;
-        protected readonly IAreaCalculator areaCalculator;
-        protected readonly ICircumferenceCalculator circumferenceCalculator;
-        protected readonly IDistanceCalculator distanceCalculator;
 
 
-        public TriangleI() : base()
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point A {
+            set {
+                base.A = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleI(Point a, Point b, Point c) : base(a, b, c, "T")
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point B {
+            set {
+                base.B = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleI(Point a, Point b, Point c, string id) : base(a, b, c, id)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
+        public override Point C {
+            set {
+                base.C = new Point(value);
+                this.SetE();
+            }
         }
 
 
-        public TriangleI(Triangle t) : base(t)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
-        }
-
-
-        public TriangleI(TriangleI t) : this(t.A, t.B, t.C, t.Id)
-        {
-            this.SetE();
-            this.A.Id = "A";
-            this.B.Id = "B";
-            this.C.Id = "C";
-        }
-
-
-        /** Setter van Point A
-     * @param A - De nieuwe waarde (locatie) voor het eerste hoekpunt
-     */
-        public void SetA(Point a)
-        {
-            this.A = new Point(a);
-            this.SetE();
-        }
-
-        /** Setter van Point B
-     * @param B - De nieuwe waarde (locatie) voor het tweede hoekpunt
-     */
-        public void SetB(Point b)
-        {
-            this.B = new Point(b);
-            this.SetE();
-        }
-
-        /** Setter van Point C
-     * @param C - De nieuwe waarde (locatie) voor het derde hoekpunt
-     */
-        public void SetC(Point c)
-        {
-            this.C = new Point(c);
-            this.SetE();
-        }
+        public TriangleI(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
+            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
 
 
         /*  setE (E = Extra Point) berekent het I-Point van de Triangle en slaat de
@@ -115,13 +67,19 @@ namespace Catharsium.Math.Geometry.Models
      */
         private void SetE()
         {
-            var Ac = this.GetLineA().GetPoint(this.distanceCalculator.GetLength(this.GetLineC()), this.distanceCalculator.GetLength(this.GetLineB()));
-            var Bc = this.GetLineB().GetPoint(this.distanceCalculator.GetLength(this.GetLineC()), this.distanceCalculator.GetLength(this.GetLineA()));
-            var ta = new Line(this.A, Ac);
-            var tb = new Line(this.B, Bc);
-            this.I = new Circle(this.areaCalculator, this.circumferenceCalculator) {
+            var Ac = this.GetLineA().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineB()));
+            var Bc = this.GetLineB().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineA()));
+            var ta = new Line(this.DistanceCalculator) {
+                P = this.A,
+                Q = Ac
+            };
+            var tb = new Line(this.DistanceCalculator) {
+                P = this.B,
+                Q = Bc
+            };
+            this.I = new Circle(this.AreaCalculator, this.CircumferenceCalculator) {
                 Center = ta.CutsWith(tb),
-                Radius = this.distanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA()),
+                Radius = this.DistanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA()),
                 Id = "I"
             };
         }
@@ -129,18 +87,18 @@ namespace Catharsium.Math.Geometry.Models
 
         public override string ToString()
         {
-            return $"{new Triangle(this)} => {this.I}";
+            return $"{base.ToString()} => {this.I}";
         }
 
 
-        public new static void Main(string[] args)
-        {
-            var ti = new TriangleI(new Triangle(167, 371, 611, 371, 552, 101));
-            Console.WriteLine(ti);
-            ti = new TriangleI(new Triangle(261, 347, 653, 347, 653, 105));
-            Console.WriteLine(ti);
-            ti = new TriangleI(new Triangle(120, 300, 480, 380, 579, 197));
-            Console.WriteLine(ti);
-        }
+        //public new static void Main(string[] args)
+        //{
+        //    var ti = new TriangleI(new Triangle(167, 371, 611, 371, 552, 101));
+        //    Console.WriteLine(ti);
+        //    ti = new TriangleI(new Triangle(261, 347, 653, 347, 653, 105));
+        //    Console.WriteLine(ti);
+        //    ti = new TriangleI(new Triangle(120, 300, 480, 380, 579, 197));
+        //    Console.WriteLine(ti);
+        //}
     }
 }
