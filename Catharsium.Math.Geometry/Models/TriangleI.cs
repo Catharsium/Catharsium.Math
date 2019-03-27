@@ -1,59 +1,25 @@
-using System;
 using Catharsium.Math.Geometry.Interfaces;
 
 /**
- * NAAM   : T.W. Brachthuizer<BR>
- * CKNUM  : 0105821<BR>
- * GROEP  : INF1<BR>
- * LOGIN  : tbrachth<BR><BR><BR>
- *
- * <B>TriangleI.java</B><BR>
  * TriangleI is een Triangle object (zie de documentatie bij de klasse
  * Triangle) met als uitbreiding een Circle I dat automatisch berekent wordt
  * wanneer een van de hoekpunten veranderd wordt of bij het maken van het
- * object.<BR><BR>
+ * object.
  *
- * <B>Probleem I:</B><BR>
+ * Probleem I:
  * Volgens de regel dat BA' staat tot A'C is als c staat tot b kunnen we A'
  * berekenen met de formule getPoint die als argumenten de lengtes c en b (de
  * volgorde is uiteraard van belang) mee krijgt. Hetzelfde geldt voor het punt
  * B'; CB' : B'A = c : a. Het snijpunt van de lijnen die we hieruit kunnen
- * maken (namelijk AA' en BB') is het gezochte punt I.<BR>
+ * maken (namelijk AA' en BB') is het gezochte punt I.
  * De straal van de ingeschreven cirkel is exact de afstand van het punt I tot
- * een van de zijden van de driehoek, bijvoorbeeld lijn BC.<BR>
- *
- * @author <A HREF="mailto:omnikefka@yahoo.com">T.W.Brachthuizer</A>
- * @version TriangleI.java v1.0 --- (28-04-2002)
+ * een van de zijden van de driehoek, bijvoorbeeld lijn BC.
  */
 namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleI : Triangle
     {
-        public Circle I;
-
-
-        public override Point A {
-            set {
-                base.A = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point B {
-            set {
-                base.B = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point C {
-            set {
-                base.C = new Point(value);
-                this.SetE();
-            }
-        }
+        public Circle I { get; set; }
 
 
         public TriangleI(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
@@ -65,7 +31,7 @@ namespace Catharsium.Math.Geometry.Models
      *  naam)! De methode wordt aangeroepen bij het maken van het object en bij
      *  het wijzigen van een van de hoekpunten
      */
-        private void SetE()
+        protected override void Recalculate()
         {
             var Ac = this.GetLineA().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineB()));
             var Bc = this.GetLineB().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineA()));

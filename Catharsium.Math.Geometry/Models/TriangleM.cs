@@ -1,59 +1,25 @@
-using System;
 using Catharsium.Math.Geometry.Interfaces;
 
 /**
- * NAAM   : T.W. Brachthuizer<BR>
- * CKNUM  : 0105821<BR>
- * GROEP  : INF1<BR>
- * LOGIN  : tbrachth<BR><BR><BR>
- *
- * <B>TriangleM.java</B><BR>
  * TriangleM is een Triangle object (zie de documentatie bij de klasse
  * Triangle) met als uitbreiding een Point M dat automatisch berekent wordt
  * wanneer een van de hoekpunten veranderd wordt of bij het maken van het
- * object.<BR><BR>
+ * object.
  *
- * <B>Probleem M:</B><BR>
+ * Probleem M:
  * Een oplossing van dit probleem ligt in de combinatie van de problemen H en
  * Z; we zoeken het snijpunt van de lijnen A'A'' en B'B'', waarbij A' en B'
  * respectievelijk op het midden van de lijnen BC en AC liggen en A'' en B''
  * op de lijnen vanuit A' en B' met richtingen die loodrecht staan de genoemde
  * lijnen BC en AC. We bepalen dus de middelpunten van de lijnen BC en AC en
  * vervolgens de loodrechte richtingen op deze lijnen. De gevonden lijnen A'A''
- * en B'B'' laten we snijden en het resultaat is het gezochte punt M.<BR>
- *
- * @author <A HREF="mailto:omnikefka@yahoo.com">T.W.Brachthuizer</A>
- * @version TriangleM.java v1.0 --- (28-04-2002)
+ * en B'B'' laten we snijden en het resultaat is het gezochte punt M.
  */
 namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleM : Triangle
     {
         protected Point M { get; set; }
-
-
-        public override Point A {
-            set {
-                base.A = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point B {
-            set {
-                base.B = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point C {
-            set {
-                base.C = new Point(value);
-                this.SetE();
-            }
-        }
 
 
         public TriangleM(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator) :
@@ -65,7 +31,7 @@ namespace Catharsium.Math.Geometry.Models
      *  naam)! De methode wordt aangeroepen bij het maken van het object en bij
      *  het wijzigen van een van de hoekpunten
      */
-        private void SetE()
+        protected override void Recalculate()
         {
             var ma = new Point(this.GetLineA().GetPoint(1, 1));
             var mb = new Point(this.GetLineB().GetPoint(1, 1));

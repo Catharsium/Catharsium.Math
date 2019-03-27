@@ -21,7 +21,10 @@ namespace Catharsium.Math.Geometry.Models
         public virtual Point A
         {
             get => this.a;
-            set => this.a = new Point(value);
+            set {
+                this.a = new Point(value);
+                this.Recalculate();
+            }
         }
 
 
@@ -29,7 +32,10 @@ namespace Catharsium.Math.Geometry.Models
         public virtual Point B
         {
             get => this.b;
-            set => this.b = new Point(value);
+            set {
+                this.b = new Point(value);
+                this.Recalculate();
+            }
         }
 
 
@@ -37,7 +43,15 @@ namespace Catharsium.Math.Geometry.Models
         public virtual Point C
         {
             get => this.c;
-            set => this.c = new Point(value);
+            set {
+                this.c = new Point(value);
+                this.Recalculate();
+            }
+        }
+
+
+        protected virtual void Recalculate()
+        {
         }
 
 

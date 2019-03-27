@@ -1,56 +1,23 @@
 using Catharsium.Math.Geometry.Interfaces;
 
 /**
- * NAAM   : T.W. Brachthuizer<BR>
- * CKNUM  : 0105821<BR>
- * GROEP  : INF1<BR>
- * LOGIN  : tbrachth<BR><BR><BR>
- *
- * <B>TriangleH.java</B><BR>
  * TriangleH is een Triangle object (zie de documentatie bij de klasse
  * Triangle) met als uitbreiding een Point H dat automatisch berekent wordt
  * wanneer een van de hoekpunten veranderd wordt of bij het maken van het
- * object.<BR><BR>
+ * object.
  *
- * <B>Probleem H:</B><BR>
+ * Probleem H:
  * De lijn AA' staat loodrecht op (het verlengde van) de lijn BC, dus wanneer
  * de richting van de lijn bepalen die loodrecht op BC staat en deze door het
  * punt A laten gaan hebben we een van de 3 lijnen die we zoeken. Hetzelfde
  * passen we toe op BB' en de lijn AC. Het snijpunt van beide gevonden lijnen
- * is tevens het punt dat we zoeken.<BR>
- *
- * @author <A HREF="mailto:omnikefka@yahoo.com">T.W.Brachthuizer</A>
- * @version TriangleH.java v1.0 --- (28-04-2002)
+ * is tevens het punt dat we zoeken.
  */
 namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleH : Triangle
     {
-        protected Point H;
-
-
-        public override Point A {
-            set {
-                base.A = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point B {
-            set {
-                base.B = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point C {
-            set {
-                base.C = new Point(value);
-                this.SetE();
-            }
-        }
+        public Point H { get; set; }
 
 
         public TriangleH(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
@@ -62,7 +29,7 @@ namespace Catharsium.Math.Geometry.Models
      *  naam)! De methode wordt aangeroepen bij het maken van het object en bij
      *  het wijzigen van een van de hoekpunten
      */
-        private void SetE()
+        protected override void Recalculate()
         {
             var ra = -1 / this.GetLineA().ToEq().X;
             var rb = -1 / this.GetLineB().ToEq().X;

@@ -4,20 +4,15 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class Line : Shape
     {
+        #region Properties
+
         private readonly IDistanceCalculator distanceCalculator;
 
 
-        public Line(IDistanceCalculator distanceCalculator)
-        {
-            this.distanceCalculator = distanceCalculator;
-        }
-
-
-        #region Properties
-
         private Point p;
 
-        public Point P {
+        public Point P
+        {
             get => this.p;
             set => this.p = new Point(value);
         }
@@ -25,12 +20,18 @@ namespace Catharsium.Math.Geometry.Models
 
         private Point q;
 
-        public Point Q {
+        public Point Q
+        {
             get => this.q;
             set => this.q = new Point(value);
         }
 
         #endregion
+
+        public Line(IDistanceCalculator distanceCalculator)
+        {
+            this.distanceCalculator = distanceCalculator;
+        }
         
         #region Mathematical Properties
 
@@ -50,7 +51,6 @@ namespace Catharsium.Math.Geometry.Models
             var y = vector.P.Y + (pr * part * vector.Q.Y);
             return new Point(x, y);
         }
-
 
 
         public Line ToVector()

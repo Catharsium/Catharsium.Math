@@ -2,18 +2,12 @@ using System;
 using Catharsium.Math.Geometry.Interfaces;
 
 /**
- * NAAM   : T.W. Brachthuizer<BR>
- * CKNUM  : 0105821<BR>
- * GROEP  : INF1<BR>
- * LOGIN  : tbrachth<BR><BR><BR>
- *
- * <B>TriangleIABC.java</B><BR>
  * TriangleIABC is een Triangle object (zie de documentatie bij de klasse
  * Triangle) met als uitbreiding een Circle I en drie Circle objecten K, L en M
  * dat automatisch berekent wordt wanneer een van de hoekpunten veranderd wordt
- * of bij het maken van het object.<BR><BR>
+ * of bij het maken van het object.
  *
- * <B>Probleem IABC:</B><BR>
+ * Probleem IABC:
  * Circle I kunnen we berekenen door een TriangleI object van het TriangleIABC
  * object te maken. Dit gebeurt door de TriangleIABC naar een Triangle te
  * casten en dit object als argument van een TriangleI constructor mee te geven
@@ -24,9 +18,6 @@ using Catharsium.Math.Geometry.Interfaces;
  * IC. Als we alle drie de buitenhoekdeellijnen hebben kunnen we de telkens het
  * juiste tweetal laten snijden om de punten IA, IB en IC te krijgen. De
  * straal van de cirkel IA is te berekenen volgens: O / (s-a).
- *
- * @author <A HREF="mailto:omnikefka@yahoo.com">T.W.Brachthuizer</A>
- * @version TriangleIABC.java v1.0 --- (02-05-2002)
  */
 namespace Catharsium.Math.Geometry.Models
 {
@@ -35,30 +26,6 @@ namespace Catharsium.Math.Geometry.Models
         protected Circle K { get; set; }
         protected Circle L { get; set; }
         protected Circle M { get; set; }
-
-
-        public override Point A {
-            set {
-                base.A = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point B {
-            set {
-                base.B = new Point(value);
-                this.SetE();
-            }
-        }
-
-
-        public override Point C {
-            set {
-                base.C = new Point(value);
-                this.SetE();
-            }
-        }
 
 
         public TriangleIabc(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
@@ -71,7 +38,7 @@ namespace Catharsium.Math.Geometry.Models
      *  wordt aangeroepen bij het maken van het object en bij het wijzigen van
      *  een van de hoekpunten
      */
-        private void SetE()
+        protected override void Recalculate()
         {
             var ti = new TriangleI(this.AreaCalculator, this.DistanceCalculator, this.CircumferenceCalculator) {
                 A = this.A,
