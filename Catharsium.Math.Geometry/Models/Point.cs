@@ -1,5 +1,3 @@
-using System;
-
 namespace Catharsium.Math.Geometry.Models
 {
     public class Point : Shape
@@ -12,7 +10,6 @@ namespace Catharsium.Math.Geometry.Models
         {
             this.X = x;
             this.Y = y;
-
             this.Id = "P";
         }
 
@@ -35,16 +32,6 @@ namespace Catharsium.Math.Geometry.Models
         public string ToStringDouble()
         {
             return $"{this.Id}:[{this.X},{this.Y}]";
-        }
-
-
-        public static void Main(string[] args)
-        {
-            var p = new Point(1, 4);
-            var q = new Point(3, 9) {
-                Id = "Q"
-            };
-            Console.WriteLine(p + "\n" + q);
         }
     }
 }

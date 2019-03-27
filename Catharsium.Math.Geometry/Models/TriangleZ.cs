@@ -24,7 +24,7 @@ namespace Catharsium.Math.Geometry.Models
         public TriangleZ(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
             : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
 
-        /*  setE (E = Extra Point) berekent het Z-Point van de Triangle en slaat de
+        /* berekent het Z-Point van de Triangle en slaat de
      *  waarde op in het object; PRIVATE methode en geen Setter (ondanks de
      *  naam)! De methode wordt aangeroepen bij het maken van het object en bij
      *  het wijzigen van een van de hoekpunten

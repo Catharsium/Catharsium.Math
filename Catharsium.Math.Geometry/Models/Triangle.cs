@@ -49,6 +49,20 @@ namespace Catharsium.Math.Geometry.Models
             }
         }
 
+        #region Mathematical Properties
+
+        public double GetCircumference()
+        {
+            return this.CircumferenceCalculator.GetCircumference(this);
+        }
+
+
+        public double GetArea()
+        {
+            return this.AreaCalculator.GetArea(this);
+        }
+
+        #endregion
 
         protected virtual void Recalculate()
         {
@@ -112,7 +126,8 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineA()
         {
-            return new Line(this.DistanceCalculator) {
+            return new Line(this.DistanceCalculator)
+            {
                 P = this.B,
                 Q = this.C
             };
@@ -121,31 +136,21 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineB()
         {
-            return new Line(this.DistanceCalculator) {
+            return new Line(this.DistanceCalculator)
+            {
                 P = this.A,
                 Q = this.C
             };
         }
 
-        
+
         public Line GetLineC()
         {
-            return new Line(this.DistanceCalculator) {
+            return new Line(this.DistanceCalculator)
+            {
                 P = this.A,
                 Q = this.B
             };
-        }
-
-
-        public double GetCircumference()
-        {
-            return this.CircumferenceCalculator.GetCircumference(this);
-        }
-
-
-        public double GetArea()
-        {
-            return this.AreaCalculator.GetArea(this);
         }
 
 

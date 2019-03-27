@@ -9,6 +9,7 @@ namespace Catharsium.Math.Geometry.Models
         private readonly IAreaCalculator areaCalculator;
         private readonly ICircumferenceCalculator circumferenceCalculator;
 
+
         private Point center;
 
         public Point Center
