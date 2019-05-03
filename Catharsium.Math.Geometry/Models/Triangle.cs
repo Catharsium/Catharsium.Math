@@ -4,22 +4,17 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class Triangle : Shape
     {
+        #region Properties
+
         protected readonly IAreaCalculator AreaCalculator;
         protected readonly IDistanceCalculator DistanceCalculator;
         protected readonly ICircumferenceCalculator CircumferenceCalculator;
 
 
-        public Triangle(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
-        {
-            this.AreaCalculator = areaCalculator;
-            this.DistanceCalculator = distanceCalculator;
-            this.CircumferenceCalculator = circumferenceCalculator;
-        }
-
-
         private Point a;
 
-        public virtual Point A {
+        public virtual Point A
+        {
             get => this.a;
             set {
                 this.a = new Point(value);
@@ -30,7 +25,8 @@ namespace Catharsium.Math.Geometry.Models
 
         private Point b;
 
-        public virtual Point B {
+        public virtual Point B
+        {
             get => this.b;
             set {
                 this.b = new Point(value);
@@ -41,13 +37,27 @@ namespace Catharsium.Math.Geometry.Models
 
         private Point c;
 
-        public virtual Point C {
+        public virtual Point C
+        {
             get => this.c;
             set {
                 this.c = new Point(value);
                 this.Recalculate();
             }
         }
+
+        #endregion
+
+        #region Construction
+
+        public Triangle(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
+        {
+            this.AreaCalculator = areaCalculator;
+            this.DistanceCalculator = distanceCalculator;
+            this.CircumferenceCalculator = circumferenceCalculator;
+        }
+
+        #endregion
 
         #region Mathematical Properties
 
@@ -62,70 +72,7 @@ namespace Catharsium.Math.Geometry.Models
             return this.AreaCalculator.GetArea(this);
         }
 
-        #endregion
-
-        protected virtual void Recalculate() { }
-
-
-        public double GetInAlfa()
-        {
-            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            var alpha = System.Math.Acos((b2 + c2 - a2) /
-                                         (2 * this.DistanceCalculator.GetLength(this.GetLineB()) *
-                                          this.DistanceCalculator.GetLength(this.GetLineC())));
-            return alpha * 360 / (2 * System.Math.PI);
-        }
-
-
-        /** getOutBeta berekent de binnenhoek beta van hoekpunt B
-     * @return beta - De binnenhoek van hoekpunt B
-     */
-        public double GetInBeta()
-        {
-            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return System.Math.Acos((a2 + c2 - b2) /
-                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
-        }
-
-
-        /** getOutGamma berekent de binnenhoek gamma van hoekpunt C
-     * @return gamma - De binnenhoek van hoekpunt C
-     */
-        public double GetInGamma()
-        {
-            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return System.Math.Acos((a2 + b2 - c2) /
-                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
-        }
-
-
-        public double GetOutAlfa()
-        {
-            return 180 - this.GetInAlfa();
-        }
-
-
-
-        public double GetOutBeta()
-        {
-            return 180 - this.GetInBeta();
-        }
-
-
-
-        public double GetOutGamma()
-        {
-            return 180 - this.GetInGamma();
-        }
-
-
-
+        
         public Line GetLineA()
         {
             return new Line(this.DistanceCalculator) {
@@ -150,6 +97,62 @@ namespace Catharsium.Math.Geometry.Models
                 P = this.A,
                 Q = this.B
             };
+        }
+
+        #endregion
+
+        protected virtual void Recalculate() { }
+
+
+        public double GetInAlpha()
+        {
+            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+            var alpha = System.Math.Acos((b2 + c2 - a2) /
+                                         (2 * this.DistanceCalculator.GetLength(this.GetLineB()) *
+                                          this.DistanceCalculator.GetLength(this.GetLineC())));
+            return alpha * 360 / (2 * System.Math.PI);
+        }
+
+
+        public double GetInBeta()
+        {
+            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+            return System.Math.Acos((a2 + c2 - b2) /
+                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
+        }
+
+
+        public double GetInGamma()
+        {
+            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+            return System.Math.Acos((a2 + b2 - c2) /
+                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
+        }
+
+
+        public double GetOutAlpha()
+        {
+            return 180 - this.GetInAlpha();
+        }
+
+
+
+        public double GetOutBeta()
+        {
+            return 180 - this.GetInBeta();
+        }
+
+
+
+        public double GetOutGamma()
+        {
+            return 180 - this.GetInGamma();
         }
 
 
