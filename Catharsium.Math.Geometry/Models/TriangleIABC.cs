@@ -23,12 +23,18 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleIabc : TriangleI
     {
+        #region Properties
+
         protected Circle K { get; set; }
         protected Circle L { get; set; }
         protected Circle M { get; set; }
 
+        #endregion
 
-        public TriangleIabc(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
+        public TriangleIabc(
+            IAreaCalculator areaCalculator, 
+            IDistanceCalculator distanceCalculator,
+            ICircumferenceCalculator circumferenceCalculator)
             : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
 
 

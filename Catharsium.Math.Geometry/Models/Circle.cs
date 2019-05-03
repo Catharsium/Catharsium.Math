@@ -18,6 +18,7 @@ namespace Catharsium.Math.Geometry.Models
             set => this.center = new Point(value);
         }
 
+
         public double Radius { get; set; }
 
         #endregion

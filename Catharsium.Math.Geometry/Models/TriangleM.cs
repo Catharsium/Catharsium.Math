@@ -19,11 +19,17 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleM : Triangle
     {
+        #region Properties
+
         protected Point M { get; set; }
 
+        #endregion
 
-        public TriangleM(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator) :
-            base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
+        public TriangleM(
+            IAreaCalculator areaCalculator,
+            IDistanceCalculator distanceCalculator,
+            ICircumferenceCalculator circumferenceCalculator)
+            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
 
 
         /*  setE (E = Extra Point) berekent het M-Point van de Triangle en slaat de

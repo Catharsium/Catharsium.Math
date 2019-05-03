@@ -2,9 +2,14 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class Point : Shape
     {
+        #region Properties
+
         public double X { get; set; }
         public double Y { get; set; }
 
+        #endregion
+
+        #region Construction
 
         public Point(double x, double y)
         {
@@ -22,6 +27,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public Point(Point p) : this(p.X, p.Y, p.Id) { }
 
+        #endregion
 
         public override string ToString()
         {

@@ -18,8 +18,8 @@ namespace Catharsium.Math.Geometry.Models
 
 
         private Point a;
-        public virtual Point A
-        {
+
+        public virtual Point A {
             get => this.a;
             set {
                 this.a = new Point(value);
@@ -29,8 +29,8 @@ namespace Catharsium.Math.Geometry.Models
 
 
         private Point b;
-        public virtual Point B
-        {
+
+        public virtual Point B {
             get => this.b;
             set {
                 this.b = new Point(value);
@@ -40,8 +40,8 @@ namespace Catharsium.Math.Geometry.Models
 
 
         private Point c;
-        public virtual Point C
-        {
+
+        public virtual Point C {
             get => this.c;
             set {
                 this.c = new Point(value);
@@ -64,9 +64,7 @@ namespace Catharsium.Math.Geometry.Models
 
         #endregion
 
-        protected virtual void Recalculate()
-        {
-        }
+        protected virtual void Recalculate() { }
 
 
         public double GetInAlfa()
@@ -74,7 +72,9 @@ namespace Catharsium.Math.Geometry.Models
             var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
             var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
             var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            var alpha = System.Math.Acos((b2 + c2 - a2) / (2 * this.DistanceCalculator.GetLength(this.GetLineB()) * this.DistanceCalculator.GetLength(this.GetLineC())));
+            var alpha = System.Math.Acos((b2 + c2 - a2) /
+                                         (2 * this.DistanceCalculator.GetLength(this.GetLineB()) *
+                                          this.DistanceCalculator.GetLength(this.GetLineC())));
             return alpha * 360 / (2 * System.Math.PI);
         }
 
@@ -87,7 +87,8 @@ namespace Catharsium.Math.Geometry.Models
             var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
             var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
             var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return System.Math.Acos((a2 + c2 - b2) / (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
+            return System.Math.Acos((a2 + c2 - b2) /
+                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
         }
 
 
@@ -99,7 +100,8 @@ namespace Catharsium.Math.Geometry.Models
             var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
             var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
             var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return System.Math.Acos((a2 + b2 - c2) / (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
+            return System.Math.Acos((a2 + b2 - c2) /
+                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
         }
 
 
@@ -126,8 +128,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineA()
         {
-            return new Line(this.DistanceCalculator)
-            {
+            return new Line(this.DistanceCalculator) {
                 P = this.B,
                 Q = this.C
             };
@@ -136,8 +137,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineB()
         {
-            return new Line(this.DistanceCalculator)
-            {
+            return new Line(this.DistanceCalculator) {
                 P = this.A,
                 Q = this.C
             };
@@ -146,8 +146,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineC()
         {
-            return new Line(this.DistanceCalculator)
-            {
+            return new Line(this.DistanceCalculator) {
                 P = this.A,
                 Q = this.B
             };

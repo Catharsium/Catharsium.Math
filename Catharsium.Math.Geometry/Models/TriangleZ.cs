@@ -18,11 +18,18 @@ namespace Catharsium.Math.Geometry.Models
 {
     public class TriangleZ : Triangle
     {
+        #region Properties
+
         protected Point Z { get; set; }
 
+        #endregion
 
-        public TriangleZ(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
+        public TriangleZ(
+            IAreaCalculator areaCalculator,
+            IDistanceCalculator distanceCalculator,
+            ICircumferenceCalculator circumferenceCalculator)
             : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
+
 
         /* berekent het Z-Point van de Triangle en slaat de
      *  waarde op in het object; PRIVATE methode en geen Setter (ondanks de
