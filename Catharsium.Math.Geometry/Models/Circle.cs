@@ -1,62 +1,71 @@
-namespace Catharsium.Math.Geometry.Models
+using System;
+
+public class Circle : Shape
 {
-    public class Circle : Shape
+    #region Properties
+
+    private Point center;
+    public Point Center
     {
-        #region Properties
-
-        private Point center;
-
-        public Point Center {
-            get => this.center;
-            set => this.center = new Point(value);
-        }
+        get => this.center;
+        set => this.center = new Point(value);
+    }
 
 
-        public double Radius { get; set; }
+    public double Radius { get; set; }
 
-        #endregion
+    #endregion
 
-        #region Construction
+    #region Construction
 
-        public Circle() : this(0, 0, 0) { }
-
-
-        public Circle(double x, double y, double r) : this(new Point(x, y), r, "C") { }
-
-
-        public Circle(double x, double y, double r, string id) : this(new Point(x, y), r, id) { }
+    public Circle() : this(0, 0, 0)
+    {
+    }
 
 
-        public Circle(Point p, double r) : this(p, r, "C") { }
+    public Circle(double x, double y, double r) : this(new Point(x, y), r, "C")
+    {
+    }
 
 
-        public Circle(Point p, double r, string id)
-        {
-            this.Center = new Point(p);
-            this.Radius = r;
-            this.Id = "C";
-        }
+    public Circle(double x, double y, double r, string id) : this(new Point(x, y), r, id)
+    {
+    }
 
 
-        public Circle(Circle c) : this(c.Center, c.Radius, c.Id) { }
-
-        #endregion
-
-        public double GetPerimeter()
-        {
-            return 2 * System.Math.PI * this.Radius;
-        }
+    public Circle(Point p, double r) : this(p, r, "C")
+    {
+    }
 
 
-        public double GetArea()
-        {
-            return System.Math.PI * System.Math.Pow(this.Radius, 2);
-        }
+    public Circle(Point p, double r, string id)
+    {
+        this.Center = new Point(p);
+        this.Radius = r;
+        this.Id = "C";
+    }
 
 
-        public override string ToString()
-        {
-            return $"{this.Id}:[{this.Center},{this.Radius}:{System.Math.Round(this.Radius)}]";
-        }
+    public Circle(Circle c) : this(c.Center, c.Radius, c.Id)
+    {
+    }
+
+    #endregion
+
+    public double GetPerimeter()
+    {
+        return 2 * Math.PI * this.Radius;
+    }
+
+
+    public double GetArea()
+    {
+        return Math.PI * Math.Pow(this.Radius, 2);
+    }
+
+
+    public override string ToString()
+    {
+        return $"{this.Id}:[{this.Center},{this.Radius}:{Math.Round(this.Radius)}]";
     }
 }
