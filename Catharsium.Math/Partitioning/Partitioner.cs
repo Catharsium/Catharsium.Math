@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
-namespace Catharsium.Math.Tests.Partitioning
+namespace Catharsium.Math.Partitioning
 {
     public class Partitioner
     {
