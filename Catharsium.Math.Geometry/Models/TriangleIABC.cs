@@ -1,4 +1,3 @@
-using System;
 using Catharsium.Math.Geometry.Interfaces;
 
 /**

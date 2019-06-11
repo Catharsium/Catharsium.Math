@@ -1,5 +1,6 @@
 ﻿using Catharsium.Math.Geometry.Interfaces;
 using Catharsium.Math.Geometry.Models;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Calculators
 {
@@ -16,7 +17,7 @@ namespace Catharsium.Math.Geometry.Calculators
 
         public double GetCircumference(Circle circle)
         {
-            return 2 * System.Math.PI * circle.Radius;
+            return 2 * PI * circle.Radius;
         }
 
 

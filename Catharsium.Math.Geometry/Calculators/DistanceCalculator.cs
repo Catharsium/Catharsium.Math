@@ -1,5 +1,6 @@
 ﻿using Catharsium.Math.Geometry.Interfaces;
 using Catharsium.Math.Geometry.Models;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Calculators
 {
@@ -7,9 +8,9 @@ namespace Catharsium.Math.Geometry.Calculators
     {
         public double GetDistance(Point p, Point q)
         {
-            var dx = System.Math.Pow(p.X - q.X, 2);
-            var dy = System.Math.Pow(p.Y - q.Y, 2);
-            return System.Math.Sqrt(dx + dy);
+            var dx = Pow(p.X - q.X, 2);
+            var dy = Pow(p.Y - q.Y, 2);
+            return Sqrt(dx + dy);
         }
 
 

@@ -2,6 +2,7 @@
 using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTests
 {
@@ -24,7 +25,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
                 Radius = 1
             };
             var actual = this.Target.GetCircumference(circle);
-            Assert.AreEqual(System.Math.PI * 2, actual);
+            Assert.AreEqual(PI * 2, actual);
         }
 
 
@@ -36,7 +37,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
                 Radius = this.Radius
             };
             var actual = this.Target.GetCircumference(circle);
-            Assert.AreEqual(System.Math.PI * 2 * circle.Radius, actual);
+            Assert.AreEqual(PI * 2 * circle.Radius, actual);
         }
 
 

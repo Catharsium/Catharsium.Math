@@ -1,3 +1,5 @@
+using static System.Math;
+
 namespace Catharsium.Math.Geometry.Models
 {
     public class Point : Shape
@@ -31,7 +33,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public override string ToString()
         {
-            return this.Id + ":[" + System.Math.Round(this.X) + "," + System.Math.Round(this.Y) + "]";
+            return this.Id + ":[" + Round(this.X) + "," + Round(this.Y) + "]";
         }
 
 

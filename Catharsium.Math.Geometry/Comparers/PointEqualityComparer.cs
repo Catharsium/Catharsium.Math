@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Catharsium.Math.Geometry.Models;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Comparers
 {
@@ -11,7 +12,7 @@ namespace Catharsium.Math.Geometry.Comparers
                 return false;
             }
 
-            return System.Math.Abs(p.X - q.X) < 0.0000001 && System.Math.Abs(p.Y - q.Y) < 0.0000001;
+            return Abs(p.X - q.X) < 0.0000001 && Abs(p.Y - q.Y) < 0.0000001;
         }
 
 

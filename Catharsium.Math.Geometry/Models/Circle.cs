@@ -1,4 +1,5 @@
 using Catharsium.Math.Geometry.Interfaces;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Models
 {
@@ -46,7 +47,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public override string ToString()
         {
-            return $"{this.Id}:[{this.Center},{this.Radius}:{System.Math.Round(this.Radius)}]";
+            return $"{this.Id}:[{this.Center},{this.Radius}:{Round(this.Radius)}]";
         }
     }
 }

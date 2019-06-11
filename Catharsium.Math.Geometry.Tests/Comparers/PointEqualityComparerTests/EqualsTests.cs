@@ -43,7 +43,7 @@ namespace Catharsium.Math.Geometry.Tests.Comparers.PointEqualityComparerTests
 
 
         [TestMethod]
-        public void Equals_PointsWithDifferenX_ReturnsFalse()
+        public void Equals_PointsWithDifferentX_ReturnsFalse()
         {
             var p = new Point(1, 2);
             var q = new Point(p.X + 1, p.Y);
@@ -54,7 +54,7 @@ namespace Catharsium.Math.Geometry.Tests.Comparers.PointEqualityComparerTests
 
 
         [TestMethod]
-        public void Equals_PointsWithDifferenY_ReturnsFalse()
+        public void Equals_PointsWithDifferentY_ReturnsFalse()
         {
             var p = new Point(1, 2);
             var q = new Point(p.X, p.Y + 1);

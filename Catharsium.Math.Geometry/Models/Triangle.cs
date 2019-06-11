@@ -1,4 +1,5 @@
 using Catharsium.Math.Geometry.Interfaces;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Models
 {
@@ -106,32 +107,32 @@ namespace Catharsium.Math.Geometry.Models
 
         public double GetInAlpha()
         {
-            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            var alpha = System.Math.Acos((b2 + c2 - a2) /
+            var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+            var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+            var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+            var alpha = Acos((b2 + c2 - a2) /
                                          (2 * this.DistanceCalculator.GetLength(this.GetLineB()) *
                                           this.DistanceCalculator.GetLength(this.GetLineC())));
-            return alpha * 360 / (2 * System.Math.PI);
+            return alpha * 360 / (2 * PI);
         }
 
 
         public double GetInBeta()
         {
-            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return System.Math.Acos((a2 + c2 - b2) /
+            var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+            var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+            var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+            return Acos((a2 + c2 - b2) /
                                     (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
         }
 
 
         public double GetInGamma()
         {
-            var a2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = System.Math.Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return System.Math.Acos((a2 + b2 - c2) /
+            var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+            var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+            var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+            return Acos((a2 + b2 - c2) /
                                     (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
         }
 
@@ -141,15 +142,13 @@ namespace Catharsium.Math.Geometry.Models
             return 180 - this.GetInAlpha();
         }
 
-
-
+        
         public double GetOutBeta()
         {
             return 180 - this.GetInBeta();
         }
 
-
-
+        
         public double GetOutGamma()
         {
             return 180 - this.GetInGamma();

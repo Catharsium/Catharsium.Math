@@ -1,4 +1,5 @@
 using Catharsium.Math.Geometry.Interfaces;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Models
 {
@@ -121,12 +122,12 @@ namespace Catharsium.Math.Geometry.Models
      */
         public double AngleWith(Line l)
         {
-            var alfa = this.P.X - this.Q.X == 0 ? 90 : System.Math.Atan((this.P.Y - this.Q.Y) / (this.P.X - this.Q.X));
+            var alfa = this.P.X - this.Q.X == 0 ? 90 : Atan((this.P.Y - this.Q.Y) / (this.P.X - this.Q.X));
             var beta = l.P.X - l.Q.X == 0
                 ? 90
                 : System.Math.Atan((l.P.Y - l.Q.Y) /
                                    (l.P.X - l.Q.X));
-            return System.Math.Abs(alfa - beta) * 360 / (2 * System.Math.PI);
+            return System.Math.Abs(alfa - beta) * 360 / (2 * PI);
         }
 
 

@@ -2,6 +2,7 @@
 using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
 {
@@ -46,7 +47,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
                 Radius = 1
             };
             var actual = this.Target.GetArea(circle);
-            Assert.AreEqual(System.Math.PI, actual);
+            Assert.AreEqual(PI, actual);
         }
 
 
@@ -58,7 +59,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
                 Radius = 10
             };
             var actual = this.Target.GetArea(circle);
-            Assert.AreEqual(System.Math.PI * circle.Radius * circle.Radius, actual);
+            Assert.AreEqual(PI * circle.Radius * circle.Radius, actual);
         }
     }
 }

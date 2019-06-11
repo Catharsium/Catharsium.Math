@@ -2,6 +2,7 @@
 using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static System.Math;
 
 namespace Catharsium.Math.Geometry.Tests.Calculators.DistanceCalculatorTests
 {
@@ -92,7 +93,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.DistanceCalculatorTests
             };
 
             var actual = this.Target.GetDistance(line, reference);
-            Assert.AreEqual(System.Math.Sqrt(2), actual);
+            Assert.AreEqual(Sqrt(2), actual);
         }
 
         #endregion
@@ -100,7 +101,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.DistanceCalculatorTests
         #region GetDistance(Point, Line)
 
         [TestMethod]
-        public void GetDistanceine_ReturnsDistanceToOnLine()
+        public void GetDistanceLine_ReturnsDistanceToOnLine()
         {
             var reference = new Line(this.Target) {
                 P = new Point(1, 2),
