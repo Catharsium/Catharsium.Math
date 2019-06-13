@@ -39,21 +39,22 @@ namespace Catharsium.Math.Geometry.Models
      */
         protected override void Recalculate()
         {
-            var ma = new Point(this.GetLineA().GetPoint(1, 1));
-            var mb = new Point(this.GetLineB().GetPoint(1, 1));
-            var ya = ma.Y - (ma.X * (-1 / this.GetLineA().ToEq().X));
-            var yb = mb.Y - (mb.X * (-1 / this.GetLineB().ToEq().X));
-            var ta = new Line(this.DistanceCalculator) {
-                P = ma,
-                Q = new Point(0, ya)
-            };
-            var tb = new Line(this.DistanceCalculator) {
-                P = mb,
-                Q = new Point(0, yb)
-            };
-            this.M = new Point(ta.CutsWith(tb)) {
-                Id = "M"
-            };
+            // TODO
+            //var ma = new Point(this.GetLineA().GetPoint(1, 1));
+            //var mb = new Point(this.GetLineB().GetPoint(1, 1));
+            //var ya = ma.Y - (ma.X * (-1 / this.GetLineA().ToEq().X));
+            //var yb = mb.Y - (mb.X * (-1 / this.GetLineB().ToEq().X));
+            //var ta = new Line(this.DistanceCalculator) {
+            //    P = ma,
+            //    Q = new Point(0, ya)
+            //};
+            //var tb = new Line(this.DistanceCalculator) {
+            //    P = mb,
+            //    Q = new Point(0, yb)
+            //};
+            //this.M = new Point(ta.CutsWith(tb)) {
+            //    Id = "M"
+            //};
         }
 
 

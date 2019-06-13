@@ -33,21 +33,22 @@ namespace Catharsium.Math.Geometry.Models
      */
         protected override void Recalculate()
         {
-            var Ac = this.GetLineA().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineB()));
-            var Bc = this.GetLineB().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineA()));
-            var ta = new Line(this.DistanceCalculator) {
-                P = this.A,
-                Q = Ac
-            };
-            var tb = new Line(this.DistanceCalculator) {
-                P = this.B,
-                Q = Bc
-            };
-            this.I = new Circle(this.AreaCalculator, this.CircumferenceCalculator) {
-                Center = ta.CutsWith(tb),
-                Radius = this.DistanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA()),
-                Id = "I"
-            };
+            // TODO
+            //var Ac = this.GetLineA().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineB()));
+            //var Bc = this.GetLineB().GetPoint(this.DistanceCalculator.GetLength(this.GetLineC()), this.DistanceCalculator.GetLength(this.GetLineA()));
+            //var ta = new Line(this.DistanceCalculator) {
+            //    P = this.A,
+            //    Q = Ac
+            //};
+            //var tb = new Line(this.DistanceCalculator) {
+            //    P = this.B,
+            //    Q = Bc
+            //};
+            //this.I = new Circle(this.AreaCalculator, this.CircumferenceCalculator) {
+            //    Center = ta.CutsWith(tb),
+            //    Radius = this.DistanceCalculator.GetDistance(ta.CutsWith(tb), this.GetLineA()),
+            //    Id = "I"
+            //};
         }
 
 

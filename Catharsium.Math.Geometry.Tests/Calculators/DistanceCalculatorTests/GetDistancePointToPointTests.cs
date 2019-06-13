@@ -41,7 +41,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.DistanceCalculatorTests
             var point = new Point(reference.X + distance, reference.Y + distance);
 
             var actual = this.Target.GetDistance(reference, point);
-            Assert.AreEqual(Sqrt((distance * distance) + (distance * distance)), actual);
+            Assert.AreEqual(Sqrt(distance * distance + distance * distance), actual);
         }
 
 
@@ -54,7 +54,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.DistanceCalculatorTests
             var point = new Point(reference.X + distanceX, reference.Y + distanceY);
 
             var actual = this.Target.GetDistance(reference, point);
-            Assert.AreEqual(Sqrt((distanceX * distanceX) + (distanceY * distanceY)), actual);
+            Assert.AreEqual(Sqrt(distanceX * distanceX + distanceY * distanceY), actual);
         }
 
 

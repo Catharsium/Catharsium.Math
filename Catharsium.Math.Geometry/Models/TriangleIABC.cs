@@ -51,33 +51,35 @@ namespace Catharsium.Math.Geometry.Models
                 C = this.C,
                 Id = "I"
             };
-            var la = new Line(this.DistanceCalculator) {
+            var la = new Line {
                 P = ti.I.Center,
                 Q = ti.A
             };
-            var lb = new Line(this.DistanceCalculator) {
+            var lb = new Line {
                 P = ti.I.Center,
                 Q = ti.B
             };
-            var lc = new Line(this.DistanceCalculator) {
+            var lc = new Line {
                 P = ti.I.Center,
                 Q = ti.C
             };
             // Bereken de lijnen loodrecht op AA', BB' en CC'
-            var dir = la.ToVector().Q;
-            la = new Line(this.DistanceCalculator) {
+
+            // TODO
+           // var dir = la.ToVector().Q;
+            la = new Line {
                 P = ti.A,
-                Q = new Point(-dir.Y + ti.A.X, dir.X + ti.A.Y)
+               // Q = new Point(-dir.Y + ti.A.X, dir.X + ti.A.Y)
             };
-            dir = lb.ToVector().Q;
-            lb = new Line(this.DistanceCalculator) {
+           // dir = lb.ToVector().Q;
+            lb = new Line {
                 P = ti.B,
-                Q = new Point(-dir.Y + ti.B.X, dir.X + ti.B.Y)
+              //  Q = new Point(-dir.Y + ti.B.X, dir.X + ti.B.Y)
             };
-            dir = lc.ToVector().Q;
-            lc = new Line(this.DistanceCalculator) {
+           // dir = lc.ToVector().Q;
+            lc = new Line {
                 P = ti.C,
-                Q = new Point(-dir.Y + ti.C.X, dir.X + ti.C.Y)
+              //  Q = new Point(-dir.Y + ti.C.X, dir.X + ti.C.Y)
             };
 
             this.I = ti.I;

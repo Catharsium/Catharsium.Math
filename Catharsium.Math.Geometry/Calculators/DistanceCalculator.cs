@@ -20,7 +20,7 @@ namespace Catharsium.Math.Geometry.Calculators
             var r = new Point(-1 * v.Q.Y, v.Q.X);
             var x2 = r.X + p.X;
             var y2 = r.Y + p.Y;
-            v = new Line(this) {
+            v = new Line {
                 P = p,
                 Q = new Point(x2, y2)
             };
@@ -37,7 +37,7 @@ namespace Catharsium.Math.Geometry.Calculators
 
         public double GetLength(Line l)
         {
-            throw new System.NotImplementedException();
+            return this.GetDistance(l.P, l.Q);
         }
     }
 }

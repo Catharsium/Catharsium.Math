@@ -38,19 +38,20 @@ namespace Catharsium.Math.Geometry.Models
      */
         protected override void Recalculate()
         {
-            var ra = new Point(this.GetLineA().GetPoint(1, 1));
-            var rb = new Point(this.GetLineB().GetPoint(1, 1));
-            var ta = new Line(this.DistanceCalculator) {
-                P = this.A,
-                Q = ra
-            };
-            var tb = new Line(this.DistanceCalculator) {
-                P = this.B,
-                Q = rb
-            };
-            this.Z = new Point(ta.CutsWith(tb)) {
-                Id = "Z"
-            };
+            // TODO
+            //var ra = new Point(this.GetLineA().GetPoint(1, 1));
+            //var rb = new Point(this.GetLineB().GetPoint(1, 1));
+            //var ta = new Line(this.DistanceCalculator) {
+            //    P = this.A,
+            //    Q = ra
+            //};
+            //var tb = new Line(this.DistanceCalculator) {
+            //    P = this.B,
+            //    Q = rb
+            //};
+            //this.Z = new Point(ta.CutsWith(tb)) {
+            //    Id = "Z"
+            //};
         }
 
 

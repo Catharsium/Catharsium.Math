@@ -35,11 +35,11 @@ namespace Catharsium.Math.Geometry.Models
             var rb = -1 / this.GetLineB().ToEq().X;
             var ya = this.A.Y - (this.A.X * ra);
             var yb = this.B.Y - (this.B.X * rb);
-            var ta = new Line(this.DistanceCalculator) {
+            var ta = new Line {
                 P = this.A,
                 Q = new Point(0, ya)
             };
-            var tb = new Line(this.DistanceCalculator) {
+            var tb = new Line {
                 P = this.B,
                 Q = new Point(0, yb)
             };

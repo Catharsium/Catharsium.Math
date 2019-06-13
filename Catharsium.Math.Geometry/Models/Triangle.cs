@@ -76,7 +76,7 @@ namespace Catharsium.Math.Geometry.Models
         
         public Line GetLineA()
         {
-            return new Line(this.DistanceCalculator) {
+            return new Line {
                 P = this.B,
                 Q = this.C
             };
@@ -85,7 +85,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineB()
         {
-            return new Line(this.DistanceCalculator) {
+            return new Line {
                 P = this.A,
                 Q = this.C
             };
@@ -94,7 +94,7 @@ namespace Catharsium.Math.Geometry.Models
 
         public Line GetLineC()
         {
-            return new Line(this.DistanceCalculator) {
+            return new Line {
                 P = this.A,
                 Q = this.B
             };
