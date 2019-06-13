@@ -2,12 +2,11 @@
 using Catharsium.Math.Geometry.Models;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static System.Math;
 
 namespace Catharsium.Math.Geometry.Tests.Calculators.AngleCalculatorTests
 {
     [TestClass]
-    public class GetAngleLinesTests : TestFixture<AngleCalculator>
+    public class GetAngleForLinesTests : TestFixture<AngleCalculator>
     {
         [TestMethod]
         public void GetAngle_LineAndItself_Returns0()
