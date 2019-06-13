@@ -7,17 +7,17 @@
 
   <ItemGroup>
     <Compile Remove="FileStorage\FileInput.cs" />
-    <Compile Remove="java\Circle.cs" />
-    <Compile Remove="java\DemoPanel.cs" />
-    <Compile Remove="java\Line.cs" />
-    <Compile Remove="java\Opgave13.cs" />
-    <Compile Remove="java\Point.cs" />
-    <Compile Remove="java\Shape.cs" />
-    <Compile Remove="java\Triangle.cs" />
-    <Compile Remove="java\TriangleH.cs" />
-    <Compile Remove="java\TriangleI.cs" />
-    <Compile Remove="java\TriangleM.cs" />
-    <Compile Remove="java\TriangleZ.cs" />
+    <Compile Remove="javaOLD\Circle.cs" />
+    <Compile Remove="javaOLD\DemoPanel.cs" />
+    <Compile Remove="javaOLD\Line.cs" />
+    <Compile Remove="javaOLD\Opgave13.cs" />
+    <Compile Remove="javaOLD\Point.cs" />
+    <Compile Remove="javaOLD\Shape.cs" />
+    <Compile Remove="javaOLD\Triangle.cs" />
+    <Compile Remove="javaOLD\TriangleH.cs" />
+    <Compile Remove="javaOLD\TriangleI.cs" />
+    <Compile Remove="javaOLD\TriangleM.cs" />
+    <Compile Remove="javaOLD\TriangleZ.cs" />
     <Compile Remove="Models\FileOutput.cs" />
   </ItemGroup>
 
