@@ -7,7 +7,6 @@ namespace Catharsium.Math.Geometry.Models
         #region Properties
         
         private Point p;
-
         public Point P
         {
             get => this.p;

@@ -25,12 +25,6 @@ namespace Catharsium.Math.Geometry.Models
 
         #endregion
 
-        public TriangleM(
-            IAreaCalculator areaCalculator,
-            IDistanceCalculator distanceCalculator,
-            ICircumferenceCalculator circumferenceCalculator)
-            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
-
 
         /*  setE (E = Extra Point) berekent het M-Point van de Triangle en slaat de
      *  waarde op in het object; PRIVATE methode en geen Setter (ondanks de

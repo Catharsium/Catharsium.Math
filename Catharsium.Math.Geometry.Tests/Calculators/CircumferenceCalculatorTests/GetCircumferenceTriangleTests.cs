@@ -13,7 +13,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_ValidTriangle_ReturnsSumOfSidesLength()
         {
-            var triangle = new Triangle(null, null, null) {
+            var triangle = new Triangle {
                 A = new Point(0, 1),
                 B = new Point(2, 3),
                 C = new Point(4, 5)

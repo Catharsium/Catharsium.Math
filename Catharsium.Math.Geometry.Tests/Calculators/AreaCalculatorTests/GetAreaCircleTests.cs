@@ -12,7 +12,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_NoRadius_Returns0()
         {
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(0, 0),
                 Radius = 0
             };
@@ -24,11 +24,11 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_LocationIsIrrelevant()
         {
-            var reference = new Circle(null, null) {
+            var reference = new Circle {
                 Center = new Point(0, 0),
                 Radius = 2
             };
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(1, 2),
                 Radius = reference.Radius
             };
@@ -42,7 +42,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_Radius1_ReturnsPi()
         {
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(0, 0),
                 Radius = 1
             };
@@ -54,7 +54,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.AreaCalculatorTests
         [TestMethod]
         public void GetArea_RadiusX_ReturnsRadiusSquaredTimesPi()
         {
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(0, 0),
                 Radius = 10
             };

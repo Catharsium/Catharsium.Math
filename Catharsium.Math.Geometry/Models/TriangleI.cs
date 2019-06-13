@@ -22,10 +22,6 @@ namespace Catharsium.Math.Geometry.Models
         public Circle I { get; set; }
 
 
-        public TriangleI(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
-            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
-
-
         /*  setE (E = Extra Point) berekent het I-Point van de Triangle en slaat de
      *  waarde op in het object; PRIVATE methode en geen Setter (ondanks de
      *  naam)! De methode wordt aangeroepen bij het maken van het object en bij

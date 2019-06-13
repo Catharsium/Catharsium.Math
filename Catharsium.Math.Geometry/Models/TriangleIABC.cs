@@ -30,12 +30,6 @@ namespace Catharsium.Math.Geometry.Models
 
         #endregion
 
-        public TriangleIabc(
-            IAreaCalculator areaCalculator, 
-            IDistanceCalculator distanceCalculator,
-            ICircumferenceCalculator circumferenceCalculator)
-            : base(areaCalculator, distanceCalculator, circumferenceCalculator) { }
-
 
         /*  setE (E = Extra Point) berekent het I, IA, IB en IC Point met de
      *  bijbehorende stralen van de Triangle en slaat de waarde op in het
@@ -43,63 +37,63 @@ namespace Catharsium.Math.Geometry.Models
      *  wordt aangeroepen bij het maken van het object en bij het wijzigen van
      *  een van de hoekpunten
      */
-        protected override void Recalculate()
-        {
-            var ti = new TriangleI(this.AreaCalculator, this.DistanceCalculator, this.CircumferenceCalculator) {
-                A = this.A,
-                B = this.B,
-                C = this.C,
-                Id = "I"
-            };
-            var la = new Line {
-                P = ti.I.Center,
-                Q = ti.A
-            };
-            var lb = new Line {
-                P = ti.I.Center,
-                Q = ti.B
-            };
-            var lc = new Line {
-                P = ti.I.Center,
-                Q = ti.C
-            };
-            // Bereken de lijnen loodrecht op AA', BB' en CC'
+        //protected override void Recalculate()
+        //{
+        //    var ti = new TriangleI {
+        //        A = this.A,
+        //        B = this.B,
+        //        C = this.C,
+        //        Id = "I"
+        //    };
+        //    var la = new Line {
+        //        P = ti.I.Center,
+        //        Q = ti.A
+        //    };
+        //    var lb = new Line {
+        //        P = ti.I.Center,
+        //        Q = ti.B
+        //    };
+        //    var lc = new Line {
+        //        P = ti.I.Center,
+        //        Q = ti.C
+        //    };
+        //    // Bereken de lijnen loodrecht op AA', BB' en CC'
 
-            // TODO
-           // var dir = la.ToVector().Q;
-            la = new Line {
-                P = ti.A,
-               // Q = new Point(-dir.Y + ti.A.X, dir.X + ti.A.Y)
-            };
-           // dir = lb.ToVector().Q;
-            lb = new Line {
-                P = ti.B,
-              //  Q = new Point(-dir.Y + ti.B.X, dir.X + ti.B.Y)
-            };
-           // dir = lc.ToVector().Q;
-            lc = new Line {
-                P = ti.C,
-              //  Q = new Point(-dir.Y + ti.C.X, dir.X + ti.C.Y)
-            };
+        //    // TODO
+        //   // var dir = la.ToVector().Q;
+        //    la = new Line {
+        //        P = ti.A,
+        //       // Q = new Point(-dir.Y + ti.A.X, dir.X + ti.A.Y)
+        //    };
+        //   // dir = lb.ToVector().Q;
+        //    lb = new Line {
+        //        P = ti.B,
+        //      //  Q = new Point(-dir.Y + ti.B.X, dir.X + ti.B.Y)
+        //    };
+        //   // dir = lc.ToVector().Q;
+        //    lc = new Line {
+        //        P = ti.C,
+        //      //  Q = new Point(-dir.Y + ti.C.X, dir.X + ti.C.Y)
+        //    };
 
-            this.I = ti.I;
-            this.I.Id = "I";
-            this.K = new Circle(this.AreaCalculator, this.CircumferenceCalculator) {
-                Center = lb.CutsWith(lc),
-                Radius = ti.GetArea() / ((this.CircumferenceCalculator.GetCircumference(ti) / 2) - this.DistanceCalculator.GetLength(ti.GetLineA())),
-                Id = "IA"
-            };
-            this.L = new Circle(this.AreaCalculator, this.CircumferenceCalculator) {
-                Center = la.CutsWith(lc),
-                Radius = ti.GetArea() / ((this.CircumferenceCalculator.GetCircumference(ti) / 2) - this.DistanceCalculator.GetLength(ti.GetLineB())),
-                Id = "IB"
-            };
-            this.M = new Circle(this.AreaCalculator, this.CircumferenceCalculator) {
-                Center = la.CutsWith(lb),
-                Radius = ti.GetArea() / ((this.CircumferenceCalculator.GetCircumference(ti) / 2) - this.DistanceCalculator.GetLength(ti.GetLineC())),
-                Id = "IC"
-            };
-        }
+        //    this.I = ti.I;
+        //    this.I.Id = "I";
+        //    this.K = new Circle {
+        //        Center = lb.CutsWith(lc),
+        //        Radius = ti.GetArea() / ((this.CircumferenceCalculator.GetCircumference(ti) / 2) - this.DistanceCalculator.GetLength(ti.GetLineA())),
+        //        Id = "IA"
+        //    };
+        //    this.L = new Circle {
+        //        Center = la.CutsWith(lc),
+        //        Radius = ti.GetArea() / ((this.CircumferenceCalculator.GetCircumference(ti) / 2) - this.DistanceCalculator.GetLength(ti.GetLineB())),
+        //        Id = "IB"
+        //    };
+        //    this.M = new Circle {
+        //        Center = la.CutsWith(lb),
+        //        Radius = ti.GetArea() / ((this.CircumferenceCalculator.GetCircumference(ti) / 2) - this.DistanceCalculator.GetLength(ti.GetLineC())),
+        //        Id = "IC"
+        //    };
+        //}
 
 
         public override string ToString()

@@ -20,7 +20,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_SingleRadius_Returns2Pi()
         {
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(0, 0),
                 Radius = 1
             };
@@ -32,7 +32,7 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_AnyRadius_Returns2PiTimesRadius()
         {
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(0, 0),
                 Radius = this.Radius
             };
@@ -44,11 +44,11 @@ namespace Catharsium.Math.Geometry.Tests.Calculators.CircumferenceCalculatorTest
         [TestMethod]
         public void GetCircumference_LocationDoesNotInfluencePerimeter()
         {
-            var reference = new Circle(null, null) {
+            var reference = new Circle {
                 Center = new Point(0, 0),
                 Radius = this.Radius
             };
-            var circle = new Circle(null, null) {
+            var circle = new Circle {
                 Center = new Point(reference.Center.X + 2, reference.Center.Y + 2),
                 Radius = reference.Radius
             };

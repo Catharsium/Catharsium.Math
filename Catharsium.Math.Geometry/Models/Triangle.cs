@@ -7,13 +7,7 @@ namespace Catharsium.Math.Geometry.Models
     {
         #region Properties
 
-        protected readonly IAreaCalculator AreaCalculator;
-        protected readonly IDistanceCalculator DistanceCalculator;
-        protected readonly ICircumferenceCalculator CircumferenceCalculator;
-
-
         private Point a;
-
         public virtual Point A
         {
             get => this.a;
@@ -25,7 +19,6 @@ namespace Catharsium.Math.Geometry.Models
 
 
         private Point b;
-
         public virtual Point B
         {
             get => this.b;
@@ -37,7 +30,6 @@ namespace Catharsium.Math.Geometry.Models
 
 
         private Point c;
-
         public virtual Point C
         {
             get => this.c;
@@ -49,30 +41,7 @@ namespace Catharsium.Math.Geometry.Models
 
         #endregion
 
-        #region Construction
-
-        public Triangle(IAreaCalculator areaCalculator, IDistanceCalculator distanceCalculator, ICircumferenceCalculator circumferenceCalculator)
-        {
-            this.AreaCalculator = areaCalculator;
-            this.DistanceCalculator = distanceCalculator;
-            this.CircumferenceCalculator = circumferenceCalculator;
-        }
-
-        #endregion
-
         #region Mathematical Properties
-
-        public double GetCircumference()
-        {
-            return this.CircumferenceCalculator.GetCircumference(this);
-        }
-
-
-        public double GetArea()
-        {
-            return this.AreaCalculator.GetArea(this);
-        }
-
         
         public Line GetLineA()
         {
@@ -104,55 +73,55 @@ namespace Catharsium.Math.Geometry.Models
 
         protected virtual void Recalculate() { }
 
-
-        public double GetInAlpha()
-        {
-            var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            var alpha = Acos((b2 + c2 - a2) /
-                                         (2 * this.DistanceCalculator.GetLength(this.GetLineB()) *
-                                          this.DistanceCalculator.GetLength(this.GetLineC())));
-            return alpha * 360 / (2 * PI);
-        }
-
-
-        public double GetInBeta()
-        {
-            var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return Acos((a2 + c2 - b2) /
-                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
-        }
+        //TODO
+        //public double GetInAlpha()
+        //{
+        //    var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+        //    var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+        //    var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+        //    var alpha = Acos((b2 + c2 - a2) /
+        //                                 (2 * this.DistanceCalculator.GetLength(this.GetLineB()) *
+        //                                  this.DistanceCalculator.GetLength(this.GetLineC())));
+        //    return alpha * 360 / (2 * PI);
+        //}
 
 
-        public double GetInGamma()
-        {
-            var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
-            var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
-            var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
-            return Acos((a2 + b2 - c2) /
-                                    (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
-        }
+        //public double GetInBeta()
+        //{
+        //    var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+        //    var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+        //    var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+        //    return Acos((a2 + c2 - b2) /
+        //                            (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineC())));
+        //}
 
 
-        public double GetOutAlpha()
-        {
-            return 180 - this.GetInAlpha();
-        }
+        //public double GetInGamma()
+        //{
+        //    var a2 = Pow(this.DistanceCalculator.GetLength(this.GetLineA()), 2);
+        //    var b2 = Pow(this.DistanceCalculator.GetLength(this.GetLineB()), 2);
+        //    var c2 = Pow(this.DistanceCalculator.GetLength(this.GetLineC()), 2);
+        //    return Acos((a2 + b2 - c2) /
+        //                            (2 * this.DistanceCalculator.GetLength(this.GetLineA()) * this.DistanceCalculator.GetLength(this.GetLineB())));
+        //}
 
-        
-        public double GetOutBeta()
-        {
-            return 180 - this.GetInBeta();
-        }
+
+        //public double GetOutAlpha()
+        //{
+        //    return 180 - this.GetInAlpha();
+        //}
 
         
-        public double GetOutGamma()
-        {
-            return 180 - this.GetInGamma();
-        }
+        //public double GetOutBeta()
+        //{
+        //    return 180 - this.GetInBeta();
+        //}
+
+        
+        //public double GetOutGamma()
+        //{
+        //    return 180 - this.GetInGamma();
+        //}
 
 
         public override string ToString()
