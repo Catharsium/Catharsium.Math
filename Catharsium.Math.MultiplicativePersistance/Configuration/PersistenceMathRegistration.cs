@@ -1,7 +1,7 @@
 ﻿using Catharsium.Math.Persistance;
 using Catharsium.Math.Persistance.Interfaces;
-using Catharsium.Util.Configuration;
 using Catharsium.Util.Configuration.Extensions;
+using Catharsium.Util.Math.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
