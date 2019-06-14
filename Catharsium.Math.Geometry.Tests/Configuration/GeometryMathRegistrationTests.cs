@@ -1,8 +1,8 @@
 ﻿using Catharsium.Math.Geometry.Calculators;
 using Catharsium.Math.Geometry.Configuration;
 using Catharsium.Math.Geometry.Interfaces;
-using Catharsium.Util.Math.Interfaces;
-using Catharsium.Util.Math.Lists;
+using Catharsium.Math.Util.Interfaces;
+using Catharsium.Math.Util.Lists;
 using Catharsium.Util.Testing.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,6 +1,6 @@
 ﻿using Catharsium.Math.Geometry.Calculators;
 using Catharsium.Math.Geometry.Interfaces;
-using Catharsium.Util.Configuration;
+using Catharsium.Math.Util._Configuration;
 using Catharsium.Util.Configuration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
