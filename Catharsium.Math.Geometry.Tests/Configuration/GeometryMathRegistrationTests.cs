@@ -15,7 +15,7 @@ namespace Catharsium.Math.Geometry.Tests.Configuration
     public class GeometryMathRegistrationTests
     {
         [TestMethod]
-        public void AddMathUtilities_RegistersDependencies()
+        public void AddGeometryMath_RegistersDependencies()
         {
             var serviceCollection = Substitute.For<IServiceCollection>();
             var config = Substitute.For<IConfiguration>();
@@ -28,7 +28,7 @@ namespace Catharsium.Math.Geometry.Tests.Configuration
 
 
         [TestMethod]
-        public void AddMathUtilities_RegistersMathUtilities()
+        public void AddGeometryMath_RegistersMathUtilities()
         {
             var serviceCollection = Substitute.For<IServiceCollection>();
             var config = Substitute.For<IConfiguration>();

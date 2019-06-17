@@ -13,7 +13,7 @@ namespace Catharsium.Math.Geometry.Configuration
         {
             var configuration = config.Load<GeometryMathConfiguration>();
 
-            services.AddMathUtilities(config);
+            services.AddMathUtil(config);
             services.AddScoped<IAreaCalculator, AreaCalculator>();
             services.AddScoped<ICircumferenceCalculator, CircumferenceCalculator>();
             services.AddScoped<IDistanceCalculator, DistanceCalculator>();

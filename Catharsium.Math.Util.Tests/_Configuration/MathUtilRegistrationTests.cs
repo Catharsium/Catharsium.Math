@@ -19,7 +19,7 @@ namespace Catharsium.Math.Util.Tests._Configuration
             var serviceCollection = Substitute.For<IServiceCollection>();
             var config = Substitute.For<IConfiguration>();
 
-            serviceCollection.AddMathUtilities(config);
+            serviceCollection.AddMathUtil(config);
             serviceCollection.ReceivedRegistration<IListMultiplicator, ListMultiplicator>();
             serviceCollection.ReceivedRegistration<IRounder, NearestRounder>();
         }

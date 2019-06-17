@@ -9,7 +9,7 @@ namespace Catharsium.Math.Util._Configuration
 {
     public static class MathUtilRegistration
     {
-        public static IServiceCollection AddMathUtilities(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddMathUtil(this IServiceCollection services, IConfiguration config)
         {
             var configuration = config.Load<MathUtilConfiguration>();
 
