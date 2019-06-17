@@ -1,6 +1,6 @@
 ﻿using Catharsium.Math.Persistance;
 using Catharsium.Math.Persistance.Interfaces;
-using Catharsium.Math.Persistence.Configuration;
+using Catharsium.Math.Persistence._Configuration;
 using Catharsium.Util.Math.Interfaces;
 using Catharsium.Util.Math.Lists;
 using Catharsium.Util.Testing.Extensions;
@@ -9,10 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 
-namespace Catharsium.Math.Persistence.Tests.Configuration
+namespace Catharsium.Math.Persistence.Tests._Configuration
 {
     [TestClass]
-    public class PersistanceMathRegistrationTests
+    public class PersistenceMathRegistrationTests
     {
         [TestMethod]
         public void AddMathUtilities_RegistersDependencies()

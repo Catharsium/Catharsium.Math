@@ -1,4 +1,4 @@
-﻿namespace Catharsium.Math.Geometry.Configuration
+﻿namespace Catharsium.Math.Geometry._Configuration
 {
     public class GeometryMathConfiguration
     {

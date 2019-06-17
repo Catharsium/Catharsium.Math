@@ -1,6 +1,6 @@
 ﻿using Catharsium.Math.Geometry.Calculators;
-using Catharsium.Math.Geometry.Configuration;
 using Catharsium.Math.Geometry.Interfaces;
+using Catharsium.Math.Geometry._Configuration;
 using Catharsium.Math.Util.Interfaces;
 using Catharsium.Math.Util.Lists;
 using Catharsium.Util.Testing.Extensions;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 
-namespace Catharsium.Math.Geometry.Tests.Configuration
+namespace Catharsium.Math.Geometry.Tests._Configuration
 {
     [TestClass]
     public class GeometryMathRegistrationTests
