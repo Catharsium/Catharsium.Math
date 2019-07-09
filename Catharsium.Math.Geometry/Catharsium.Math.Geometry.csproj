@@ -6,13 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FileStorage\FileInput.cs" />
     <Compile Remove="Models\FileOutput.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="FileStorage\FileInput.cs" />
-    <None Include="FileStorage\FileOutput.cs" />
     <None Include="Models\TriangleZ.cs" />
     <None Include="Models\TriangleM.cs" />
     <None Include="Models\TriangleI.cs" />

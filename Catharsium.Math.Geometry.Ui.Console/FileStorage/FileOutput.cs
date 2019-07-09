@@ -1,7 +1,7 @@
 using System.IO;
 using Catharsium.Util.IO.Interfaces;
 
-namespace Catharsium.Math.Geometry.FileStorage
+namespace Catharsium.Math.Geometry.Ui.Console.FileStorage
 {
     public class FileOutput
     {

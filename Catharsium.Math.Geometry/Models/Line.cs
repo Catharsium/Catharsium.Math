@@ -1,5 +1,3 @@
-using static System.Math;
-
 namespace Catharsium.Math.Geometry.Models
 {
     public class Line : Shape
@@ -55,11 +53,10 @@ namespace Catharsium.Math.Geometry.Models
      */
         public Point ToEq()
         {
-            double a, b;
             var dy = this.P.Y - this.Q.Y;
             var dx = this.P.X - this.Q.X;
-            a = dy / dx;
-            b = this.P.Y - this.P.X * a;
+            var a = dy / dx;
+            var b = this.P.Y - this.P.X * a;
             return new Point(a, b);
         }
 
@@ -97,22 +94,6 @@ namespace Catharsium.Math.Geometry.Models
         //        this.Q = new Point(x, y);
         //    }
         //}
-
-
-        /** angleWith berekent de hoek tussen 2 Line objecten in graden
-     * @param l De Line waarvan de hoek met het aanroepende Line object
-     *            berekent moet worden
-     * @return De hoek in graden tussen beide Line objecten
-     */
-        public double AngleWith(Line l)
-        {
-            var alpha = this.P.X - this.Q.X == 0 ? 90 : Atan((this.P.Y - this.Q.Y) / (this.P.X - this.Q.X));
-            var beta = l.P.X - l.Q.X == 0
-                ? 90
-                : System.Math.Atan((l.P.Y - l.Q.Y) /
-                                   (l.P.X - l.Q.X));
-            return System.Math.Abs(alpha - beta) * 360 / (2 * PI);
-        }
 
 
         /** cutsWith berekent het snijpunt van 2 Line objecten

@@ -6,4 +6,16 @@
     <Version>0.4.1</Version>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="FileStorage\FileInput.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="FileStorage\FileInput.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Catharsium.Util.IO" Version="1.2.4" />
+  </ItemGroup>
+
 </Project>
