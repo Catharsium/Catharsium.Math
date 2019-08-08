@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Catharsium.Util.IO" Version="1.2.4" />
+    <PackageReference Include="Catharsium.Util.IO" Version="1.2.12" />
   </ItemGroup>
 
   <ItemGroup>
