@@ -22,6 +22,7 @@ namespace Catharsium.Math.Util.Tests._Configuration
             serviceCollection.AddMathUtil(config);
             serviceCollection.ReceivedRegistration<IListMultiplicator, ListMultiplicator>();
             serviceCollection.ReceivedRegistration<IRounder, NearestRounder>();
+            serviceCollection.ReceivedRegistration<IPartitioner, Partitioner>();
         }
     }
 }

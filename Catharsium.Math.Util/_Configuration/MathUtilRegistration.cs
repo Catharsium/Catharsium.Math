@@ -15,6 +15,7 @@ namespace Catharsium.Math.Util._Configuration
 
             services.AddScoped<IListMultiplicator, ListMultiplicator>();
             services.AddScoped<IRounder, NearestRounder>();
+            services.AddScoped<IPartitioner, Partitioner>();
 
             return services;
         }
