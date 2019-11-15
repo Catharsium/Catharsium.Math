@@ -52,6 +52,14 @@ namespace Catharsium.Math.Util.Tests.Numbers
 
 
         [TestMethod]
+        public void FindPartition_SmallerThanFirstPartition_ReturnsLastPartition()
+        {
+            var actual = this.Target.FindPartition(0);
+            Assert.AreEqual(this.Partitions[0], actual);
+        }
+
+
+        [TestMethod]
         public void FindPartition_LargerThanLastPartition_ReturnsLastPartition()
         {
             var actual = this.Target.FindPartition(4);

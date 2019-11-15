@@ -14,11 +14,20 @@ namespace Catharsium.Math.Util.Numbers
         }
 
 
-
         public int[] FindPartition(int i)
         {
             var result = this.Partitions.FirstOrDefault(p => p[0] <= i && p[1] >= i);
-            return result ?? this.Partitions[^1];
+            if (result != null) {
+                return result;
+            }
+
+            if (i < this.Partitions[0][0]) {
+                return this.Partitions[0];
+            }
+
+            return i > this.Partitions[^1][1]
+                ? this.Partitions[^1]
+                : null;
         }
     }
 }
