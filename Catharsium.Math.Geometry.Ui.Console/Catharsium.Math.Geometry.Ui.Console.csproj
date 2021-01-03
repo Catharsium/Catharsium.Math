@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Catharsium.Util.IO" Version="2.3.2" />
+    <PackageReference Include="Catharsium.Util.IO" Version="20210101.2.0" />
   </ItemGroup>
 
 </Project>
