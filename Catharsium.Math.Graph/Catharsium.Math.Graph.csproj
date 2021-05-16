@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <UserSecretsId>88ee3da8-65e7-45d5-9080-5a7861a1e20a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Catharsium.Util.Configuration" Version="20210516.2.0" />
+    <PackageReference Include="Catharsium.Util.IO.Console" Version="20210516.2.0" />
+  </ItemGroup>
+
+</Project>
