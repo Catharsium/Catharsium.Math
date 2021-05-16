@@ -1,4 +1,4 @@
-﻿using Catharsium.Math.Graph.Graph;
+﻿using Catharsium.Math.Graph.Graphs;
 using Catharsium.Math.Graph.Interfaces;
 using Catharsium.Util.Configuration.Extensions;
 using Catharsium.Util.IO.Console._Configuration;
@@ -16,7 +16,8 @@ namespace Catharsium.Math.Graph._Configuration
 
             services.AddConsoleIoUtilities(config);
 
-            services.AddScoped<IGraph, HorizontalGraph>();
+            services.AddScoped<IGraphFactory, GraphFactory>();
+            services.AddScoped<IGraph, HorizontalBarGraph>();
 
             return services;
         }

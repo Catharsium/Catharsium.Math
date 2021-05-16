@@ -1,5 +1,5 @@
 ﻿using Catharsium.Math.Graph._Configuration;
-using Catharsium.Math.Graph.Graph;
+using Catharsium.Math.Graph.Graphs;
 using Catharsium.Math.Graph.Interfaces;
 using Catharsium.Util.IO.Console.Interfaces;
 using Catharsium.Util.Testing.Extensions;
@@ -20,7 +20,8 @@ namespace Catharsium.Math.Graph.Tests._Configuration
             var configuration = Substitute.For<IConfiguration>();
 
             serviceCollection.AddGraphMath(configuration);
-            serviceCollection.ReceivedRegistration<IGraph, HorizontalGraph>();
+            serviceCollection.ReceivedRegistration<IGraphFactory, GraphFactory>();
+            serviceCollection.ReceivedRegistration<IGraph, HorizontalBarGraph>();
         }
 
 
