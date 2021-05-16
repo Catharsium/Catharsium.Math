@@ -24,10 +24,9 @@ namespace Catharsium.Math.Graph.Graphs
             var maxValue = data.Data.Max(g => g.Value);
             var blockString = data.Block.ToString();
 
-            foreach (var entry in data.Data.OrderBy(d => d.Key)) {
+            foreach (var entry in data.Data) {
                 var percentage = entry.Value / maxValue;
                 var length = System.Math.Round(percentage * data.Size);
-                var text = $"{entry.Key}{entry.Value:n0}";
                 this.console.Write(entry.Key);
                 this.console.FillBlock(entry.Key.Length, maxKeyLength);
                 this.console.Write($" (");
@@ -35,7 +34,7 @@ namespace Catharsium.Math.Graph.Graphs
                 this.console.Write($"{entry.Value:n0}");
                 this.console.ResetColor();
                 this.console.Write($")");
-                this.console.FillBlock(text.Length, maxValueLength + 2);
+                this.console.FillBlock(entry.Value.ToString("n0").Length, maxValueLength + 2);
                 for (var i = 0 ; i < length ; i++) {
                     this.console.Write(blockString);
                 }
