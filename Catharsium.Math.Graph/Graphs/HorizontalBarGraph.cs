@@ -24,15 +24,15 @@ namespace Catharsium.Math.Graph.Graphs
             var maxValue = data.Data.Max(g => g.Value);
             var blockString = data.Block.ToString();
 
-            foreach (var group in data.Data) {
-                var percentage = group.Value / maxValue;
+            foreach (var entry in data.Data.OrderBy(d => d.Key)) {
+                var percentage = entry.Value / maxValue;
                 var length = System.Math.Round(percentage * data.Size);
-                var text = $"{group.Key}{group.Value:n0}";
-                this.console.Write(group.Key);
-                this.console.FillBlock(group.Key.Length, maxKeyLength);
+                var text = $"{entry.Key}{entry.Value:n0}";
+                this.console.Write(entry.Key);
+                this.console.FillBlock(entry.Key.Length, maxKeyLength);
                 this.console.Write($" (");
                 this.console.ForegroundColor = ConsoleColor.DarkGreen;
-                this.console.Write($"{group.Value:n0}");
+                this.console.Write($"{entry.Value:n0}");
                 this.console.ResetColor();
                 this.console.Write($")");
                 this.console.FillBlock(text.Length, maxValueLength + 2);
