@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>0.5.1</Version>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Catharsium.Util.IO" Version="2.3.2" />
+    <PackageReference Include="Catharsium.Util.IO" Version="20210516.2.0" />
   </ItemGroup>
 
   <ItemGroup>

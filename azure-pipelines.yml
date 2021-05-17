@@ -1,0 +1,81 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetCommand@2
+  displayName: 'Restore'
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    projects: '*.sln'
+    
+- task: DotNetCoreCLI@2
+  displayName: 'Test'
+  inputs:
+    command: 'test'
+    projects: '*.sln'
+    testRunTitle: 'Test'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish <Catharsium.Math.Geometry>'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '**/Catharsium.Math.Geometry.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    zipAfterPublish: True
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish <Catharsium.Math.Geometry.Ui.Console>'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '**/Catharsium.Math.Geometry.Ui.Console.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    zipAfterPublish: True
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish <Catharsium.Math.Persistence>'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '**/Catharsium.Math.Persistence.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    zipAfterPublish: True
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish <Catharsium.Math.Util>'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '**/Catharsium.Math.Util.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    zipAfterPublish: True
+
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: pack
+    versioningScheme: byEnvVar
+    versionEnvVar: Build.BuildNumber
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'NuGet.org'

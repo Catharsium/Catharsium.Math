@@ -1,10 +1,10 @@
-using System.Collections.Generic;
 using Catharsium.Math.Persistance;
-using Catharsium.Util.Comparing.Equality;
+using Catharsium.Util.Comparers;
 using Catharsium.Util.Math.Interfaces;
 using Catharsium.Util.Math.Lists;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace Catharsium.Math.Persistence.Tests
 {
