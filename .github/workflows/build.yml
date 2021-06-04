@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: .NET 5 Application
+    name: Build
     steps:
       - uses: actions/checkout@v2
       - name: Setup dotnet
@@ -20,27 +20,28 @@ jobs:
       - run: dotnet test
   pack:
     runs-on: ubuntu-latest
+    name: Pack
     needs: build
-    if: github.event_name == 'push'
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.203'  
-      - name: Set current date as env variable
-        run: echo "VERSION::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+          dotnet-version: '5.0.203'
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
       - name: Pack
-        run: dotnet pack --output ./artifacts --configuration Release -p:Version=$VERSION
+        run: dotnet pack --output ./artifacts --configuration Release -p:Version=${{ steps.date.outputs.date }}.${{ github.run_number }}
       - uses: actions/upload-artifact@v1
         with:
           name: artifacts
           path: ./artifacts
   publish:
     runs-on: ubuntu-latest
+    name: Publish
     needs: pack
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
