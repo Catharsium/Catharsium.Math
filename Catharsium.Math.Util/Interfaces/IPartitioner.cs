@@ -1,7 +1,6 @@
-﻿namespace Catharsium.Math.Util.Interfaces
+﻿namespace Catharsium.Math.Util.Interfaces;
+
+public interface IPartitioner
 {
-    public interface IPartitioner
-    {
-        int[] FindPartition(int i);
-    }
+    int[] FindPartition(int i);
 }

@@ -1,26 +1,24 @@
 using static System.Math;
+namespace Catharsium.Math.Geometry.Models;
 
-namespace Catharsium.Math.Geometry.Models
+public class Circle : Shape
 {
-    public class Circle : Shape
+    #region Properties
+
+    private Point center;
+    public Point Center
     {
-        #region Properties
-
-        private Point center;
-        public Point Center
-        {
-            get => this.center;
-            set => this.center = new Point(value);
-        }
+        get => this.center;
+        set => this.center = new Point(value);
+    }
 
 
-        public double Radius { get; set; }
+    public double Radius { get; set; }
 
-        #endregion
+    #endregion
 
-        public override string ToString()
-        {
-            return $"{this.Id}:[{this.Center},{this.Radius}:{Round(this.Radius)}]";
-        }
+    public override string ToString()
+    {
+        return $"{this.Id}:[{this.Center},{this.Radius}:{Round(this.Radius)}]";
     }
 }

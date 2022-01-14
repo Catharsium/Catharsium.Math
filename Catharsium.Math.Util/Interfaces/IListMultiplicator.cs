@@ -1,7 +1,6 @@
-﻿namespace Catharsium.Math.Util.Interfaces
+﻿namespace Catharsium.Math.Util.Interfaces;
+
+public interface IListMultiplicator
 {
-    public interface IListMultiplicator
-    {
-        long Multiply(int[] input);
-    }
+    long Multiply(int[] input);
 }

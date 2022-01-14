@@ -1,10 +1,8 @@
 ﻿using Catharsium.Math.Geometry.Models;
+namespace Catharsium.Math.Geometry.Interfaces;
 
-namespace Catharsium.Math.Geometry.Interfaces
+public interface IAreaCalculator
 {
-    public interface IAreaCalculator
-    {
-        double GetArea(Circle c);
-        double GetArea(Triangle t);
-    }
+    double GetArea(Circle c);
+    double GetArea(Triangle t);
 }

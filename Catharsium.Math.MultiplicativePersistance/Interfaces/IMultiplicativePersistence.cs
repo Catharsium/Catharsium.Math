@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
+﻿namespace Catharsium.Math.MultiplicativePersistance.Interfaces;
 
-namespace Catharsium.Math.Persistance.Interfaces
+public interface IMultiplicativePersistence
 {
-    public interface IMultiplicativePersistence
-    {
-        List<int[]> GetPath(List<int[]> input);
-    }
+    List<int[]> GetPath(List<int[]> input);
 }

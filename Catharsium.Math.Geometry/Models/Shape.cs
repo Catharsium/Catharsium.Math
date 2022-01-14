@@ -1,7 +1,6 @@
-namespace Catharsium.Math.Geometry.Models
+namespace Catharsium.Math.Geometry.Models;
+
+public abstract class Shape
 {
-    public abstract class Shape
-    {
-        public string Id { get; set; }
-    }
+    public string Id { get; set; }
 }

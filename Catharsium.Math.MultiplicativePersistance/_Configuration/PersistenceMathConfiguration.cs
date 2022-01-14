@@ -1,6 +1,5 @@
-﻿namespace Catharsium.Math.Persistence._Configuration
+﻿namespace Catharsium.Math.MultiplicativePersistance._Configuration;
+
+public class PersistenceMathConfiguration
 {
-    public class PersistenceMathConfiguration
-    {
-    }
 }

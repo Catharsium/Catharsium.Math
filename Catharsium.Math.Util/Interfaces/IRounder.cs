@@ -1,7 +1,6 @@
-﻿namespace Catharsium.Math.Util.Interfaces
+﻿namespace Catharsium.Math.Util.Interfaces;
+
+public interface IRounder
 {
-    public interface IRounder
-    {
-        decimal Round(decimal input, int decimals = 0);
-    }
+    decimal Round(decimal input, int decimals = 0);
 }

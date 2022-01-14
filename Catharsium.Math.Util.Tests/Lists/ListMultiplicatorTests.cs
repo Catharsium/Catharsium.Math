@@ -1,46 +1,44 @@
-﻿using System;
-using Catharsium.Math.Util.Lists;
+﻿using Catharsium.Math.Util.Lists;
 using Catharsium.Util.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+namespace Catharsium.Math.Util.Tests.Lists;
 
-namespace Catharsium.Math.Util.Tests.Lists
+[TestClass]
+public class ListMultiplicatorTests : TestFixture<ListMultiplicator>
 {
-    [TestClass]
-    public class ListMultiplicatorTests : TestFixture<ListMultiplicator>
+    [TestMethod]
+    public void Multiply_NoNumbers_Returns0()
     {
-        [TestMethod]
-        public void Multiply_NoNumbers_Returns0()
-        {
-            var input = Array.Empty<int>();
-            var actual = this.Target.Multiply(input);
-            Assert.AreEqual(0, actual);
-        }
+        var input = Array.Empty<int>();
+        var actual = this.Target.Multiply(input);
+        Assert.AreEqual(0, actual);
+    }
 
 
-        [TestMethod]
-        public void Multiply_SingleNumber_ReturnsNumber()
-        {
-            var input = new[] {1};
-            var actual = this.Target.Multiply(input);
-            Assert.AreEqual(input[0], actual);
-        }
+    [TestMethod]
+    public void Multiply_SingleNumber_ReturnsNumber()
+    {
+        var input = new[] { 1 };
+        var actual = this.Target.Multiply(input);
+        Assert.AreEqual(input[0], actual);
+    }
 
 
-        [TestMethod]
-        public void Multiply_TwoNumbers_ReturnsNumbersProduct()
-        {
-            var input = new[] {2, 3};
-            var actual = this.Target.Multiply(input);
-            Assert.AreEqual(input[0] * input[1], actual);
-        }
+    [TestMethod]
+    public void Multiply_TwoNumbers_ReturnsNumbersProduct()
+    {
+        var input = new[] { 2, 3 };
+        var actual = this.Target.Multiply(input);
+        Assert.AreEqual(input[0] * input[1], actual);
+    }
 
 
-        [TestMethod]
-        public void Multiply_MultipleNumbers_ReturnsNumbersProduct()
-        {
-            var input = new[] {4, 5, 6};
-            var actual = this.Target.Multiply(input);
-            Assert.AreEqual(input[0] * input[1] * input[2], actual);
-        }
+    [TestMethod]
+    public void Multiply_MultipleNumbers_ReturnsNumbersProduct()
+    {
+        var input = new[] { 4, 5, 6 };
+        var actual = this.Target.Multiply(input);
+        Assert.AreEqual(input[0] * input[1] * input[2], actual);
     }
 }

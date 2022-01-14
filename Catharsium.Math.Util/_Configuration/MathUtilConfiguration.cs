@@ -1,6 +1,5 @@
-﻿namespace Catharsium.Math.Util._Configuration
+﻿namespace Catharsium.Math.Util._Configuration;
+
+public class MathUtilConfiguration
 {
-    public class MathUtilConfiguration
-    {
-    }
 }
