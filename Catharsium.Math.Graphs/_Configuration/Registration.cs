@@ -10,8 +10,8 @@ public static class Registration
 {
     public static IServiceCollection AddGraphMath(this IServiceCollection services, IConfiguration config)
     {
-        var configuration = config.Load<GraphMathSettings>();
-        services.AddSingleton<GraphMathSettings, GraphMathSettings>(provider => configuration);
+        var configuration = config.Load<GraphsMathSettings>();
+        services.AddSingleton<GraphsMathSettings, GraphsMathSettings>(provider => configuration);
 
         services.AddConsoleIoUtilities(config);
 
