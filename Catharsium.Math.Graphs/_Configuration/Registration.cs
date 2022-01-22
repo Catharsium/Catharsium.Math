@@ -8,7 +8,7 @@ namespace Catharsium.Math.Graphs._Configuration;
 
 public static class Registration
 {
-    public static IServiceCollection AddGraphMath(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddGraphsMath(this IServiceCollection services, IConfiguration config)
     {
         var configuration = config.Load<GraphsMathSettings>();
         services.AddSingleton<GraphsMathSettings, GraphsMathSettings>(provider => configuration);
